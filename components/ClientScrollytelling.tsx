@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { SirahEvent } from "@/types/sirah";
 import NarrativeCard from "./NarrativeCard";
 import LanguageToggle from "./LanguageToggle";
+import DeepDiveModal from "./DeepDiveModal";
 import { Menu, X, Book } from "lucide-react";
 
 const MapViewer = dynamic(() => import("./MapViewer"), {
@@ -20,6 +21,7 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
   const [language, setLanguage] = useState<"id" | "en" | "ar">("id");
   const [activeEvent, setActiveEvent] = useState<SirahEvent | null>(events.length > 0 ? events[0] : null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [modalEvent, setModalEvent] = useState<SirahEvent | null>(null);
 
   if (events.length === 0) {
     return <div className="p-8 text-center text-white">No data available.</div>;
@@ -146,12 +148,20 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
               language={language}
               isActive={activeEvent?.id === event.id}
               onActive={setActiveEvent} 
+              onOpenModal={() => setModalEvent(event)}
             />
           ))}
         </div>
       </div>
 
       <LanguageToggle language={language} onChange={setLanguage} />
+      
+      {/* Deep Dive Modal Overlay */}
+      <DeepDiveModal 
+        event={modalEvent} 
+        language={language} 
+        onClose={() => setModalEvent(null)} 
+      />
     </div>
   );
 }

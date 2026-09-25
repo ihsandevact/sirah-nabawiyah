@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { SirahEvent } from "@/types/sirah";
-import { BookOpen, Volume2, Square } from "lucide-react";
+import { BookOpen, Volume2, Square, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface NarrativeCardProps {
@@ -10,9 +10,10 @@ interface NarrativeCardProps {
   language: "id" | "en" | "ar";
   isActive: boolean;
   onActive: (event: SirahEvent) => void;
+  onOpenModal?: () => void;
 }
 
-export default function NarrativeCard({ event, language, isActive, onActive }: NarrativeCardProps) {
+export default function NarrativeCard({ event, language, isActive, onActive, onOpenModal }: NarrativeCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   
@@ -134,7 +135,7 @@ export default function NarrativeCard({ event, language, isActive, onActive }: N
           {event.description[language] || event.description['id']}
         </p>
 
-        <div className={`bg-deep-obsidian/60 rounded-xl p-5 border border-white/5 flex items-start gap-4 ${isArabic ? 'font-sans text-right flex-row' : ''}`}>
+        <div className={`bg-deep-obsidian/60 rounded-xl p-5 border border-white/5 flex items-start gap-4 ${isArabic ? 'font-sans text-right flex-row-reverse' : ''}`}>
           <div className="bg-desert-umber/20 p-2 rounded-lg">
             <BookOpen className="w-6 h-6 text-desert-umber shrink-0" />
           </div>
@@ -167,14 +168,35 @@ export default function NarrativeCard({ event, language, isActive, onActive }: N
               >
                 <h4 className="font-bold text-emerald-100 mb-2 text-lg">{ibrah.title}</h4>
                 <p className="text-sm text-emerald-200/80 mb-4 leading-relaxed">{ibrah.description}</p>
-                <div className="text-sm bg-emerald-prophetic/20 text-emerald-100 p-3 rounded-lg border border-emerald-prophetic/30 flex gap-2 items-start">
-                  <span className="font-bold shrink-0">{isArabic ? "إجراء عملي:" : (language === "id" ? "Aksi Praktis:" : "Practical Action:")}</span> 
-                  <span>{ibrah.practicalAction}</span>
+                <div className="text-sm bg-emerald-prophetic/20 text-emerald-100 p-3 rounded-lg border border-emerald-prophetic/30 flex flex-col gap-1.5">
+                  <span className="font-bold uppercase tracking-wider text-xs text-emerald-300">{isArabic ? "إجراء عملي:" : (language === "id" ? "Aksi Praktis:" : "Practical Action:")}</span> 
+                  <span className="leading-relaxed">{ibrah.practicalAction}</span>
                 </div>
               </motion.div>
             ))}
           </div>
         )}
+
+        {/* Action & Metrics Bar (Positioned at absolute bottom) */}
+        <div className={`mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-4 ${isArabic ? 'sm:flex-row-reverse justify-start' : 'justify-between'} items-start sm:items-center`}>
+          {event.distanceMetric ? (
+            <div className="flex items-center gap-2 text-sm text-sand-gold font-bold bg-sand-gold/10 px-4 py-2 rounded-lg border border-sand-gold/20">
+              <MapPin className="w-4 h-4" />
+              {event.distanceMetric}
+            </div>
+          ) : (
+            <div></div>
+          )}
+          
+          <button
+            onClick={onOpenModal}
+            className={`w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-sand-gold to-desert-umber hover:from-desert-umber hover:to-sand-gold text-white text-sm font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105 flex items-center justify-center gap-3 ${isArabic ? 'flex-row-reverse' : ''}`}
+          >
+            <BookOpen className="w-4 h-4" />
+            {isArabic ? "اقرأ المقال كاملاً" : (language === "en" ? "Read Full Article" : "Baca Artikel Lengkap")}
+          </button>
+        </div>
+
       </motion.div>
     </div>
   );
