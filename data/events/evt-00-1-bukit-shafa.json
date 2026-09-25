@@ -1,0 +1,35 @@
+{
+  "id": "evt-00-1-bukit-shafa",
+  "order": 0.1,
+  "title": {
+    "id": "Deklarasi Terbuka di Bukit Shafa",
+    "en": "Public Declaration at Mount Safa",
+    "ar": "الجهر بالدعوة على جبل الصفا"
+  },
+  "description": {
+    "id": "Setelah tiga tahun berdakwah secara sembunyi-sembunyi, Nabi ﷺ berdiri di atas bukit Shafa memanggil seluruh kabilah Quraisy untuk memperingatkan mereka tentang azab Allah. Di sinilah Abu Lahab mencela beliau.",
+    "en": "After three years of secret preaching, the Prophet ﷺ stood on Mount Safa calling all Quraysh tribes to warn them of Allah's punishment. It was here that Abu Lahab insulted him.",
+    "ar": "بعد ثلاث سنوات من الدعوة السرية، صعد النبي ﷺ على جبل الصفا ونادى قبائل قريش ليحذرهم من عذاب الله. وهنا شتمه أبو لهب."
+  },
+  "bookReference": {
+    "page": 104,
+    "chapter": "Dakwah Jahriyah"
+  },
+  "mapData": {
+    "center": [
+      39.8273,
+      21.4217
+    ],
+    "zoom": 17,
+    "pitch": 40,
+    "bearing": 90
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-shafa-1",
+      "title": "Keberanian Menyampaikan Kebenaran",
+      "description": "Menghadapi penolakan keluarga sendiri adalah ujian terberat. Nabi tetap teguh meski dicaci pamannya sendiri.",
+      "practicalAction": "Jangan takut menyampaikan kebenaran meski tidak populer di kalangan terdekat kita."
+    }
+  ]
+}

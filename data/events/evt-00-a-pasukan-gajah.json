@@ -1,0 +1,35 @@
+{
+  "id": "evt-00-a-pasukan-gajah",
+  "order": -0.4,
+  "title": {
+    "id": "Tahun Gajah & Kelahiran Nabi",
+    "en": "The Year of the Elephant & The Birth of the Prophet",
+    "ar": "عام الفيل ومولد النبي"
+  },
+  "description": {
+    "id": "Abrahah, penguasa Yaman, membawa pasukan bergajah untuk menghancurkan Ka'bah, namun Allah membinasakan mereka dengan burung Ababil. Lima puluh hari setelah peristiwa ini (Tahun Gajah), Nabi Muhammad ﷺ dilahirkan dari rahim Aminah binti Wahab, menjadi fajar baru bagi peradaban.",
+    "en": "Abrahah, ruler of Yemen, marched with an elephant army to destroy the Kaaba, but Allah decimated them with Ababil birds. Fifty days later (The Year of the Elephant), Prophet Muhammad ﷺ was born to Aminah bint Wahb, dawning a new civilization.",
+    "ar": "قاد أبرهة حاكم اليمن جيشاً من الأفيال لهدم الكعبة، فأهلكهم الله بطير أبابيل. وبعد خمسين يوماً (عام الفيل)، وُلد النبي محمد ﷺ من آمنة بنت وهب، ليكون فجراً جديداً للحضارة."
+  },
+  "bookReference": {
+    "page": 54,
+    "chapter": "Kelahiran dan Empat Puluh Tahun Sebelum Kenabian"
+  },
+  "mapData": {
+    "center": [
+      39.8261,
+      21.4225
+    ],
+    "zoom": 15,
+    "pitch": 45,
+    "bearing": -30
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-gajah-1",
+      "title": "Pertolongan Allah Mutlak",
+      "description": "Ka'bah dijaga langsung oleh Pemiliknya. Abdul Muthalib menyadari kekuatannya tidak sepadan dengan Abrahah, sehingga ia menyerahkan perlindungan Ka'bah kepada Allah.",
+      "practicalAction": "Dalam situasi mustahil di mana logika manusia menyerah, serahkan sepenuhnya urusan kepada Allah melalui tawakkal."
+    }
+  ]
+}

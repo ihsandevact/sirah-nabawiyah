@@ -1,0 +1,110 @@
+{
+  "id": "evt-11-uhud",
+  "order": 11,
+  "title": {
+    "id": "Perang Uhud: Ujian Ketaatan",
+    "en": "Battle of Uhud: A Test of Obedience",
+    "ar": "غزوة أحد: اختبار الطاعة"
+  },
+  "description": {
+    "id": "Pada tahun 3 H, Quraisy menuntut balas. Pasukan Muslim nyaris menang, namun 40 pemanah di Bukit Rumat meninggalkan pos mereka demi harta rampasan, menyebabkan serangan balik telak dari Khalid bin Walid.",
+    "en": "In 3 AH, Quraysh sought revenge. Muslims almost won, but 40 archers on Mount Rumat left their posts for war booty, allowing a devastating counter-attack led by Khalid bin Walid.",
+    "ar": "في السنة الثالثة للهجرة، أرادت قريش الانتقام. كاد المسلمون أن ينتصروا، لكن الرماة على جبل الرماة تركوا مواقعهم لجمع الغنائم، مما سمح بهجوم مضاد مدمر بقيادة خالد بن الوليد."
+  },
+  "bookReference": {
+    "page": 345,
+    "chapter": "Perang Uhud"
+  },
+  "mapData": {
+    "center": [
+      39.6105,
+      24.502
+    ],
+    "zoom": 15,
+    "pitch": 60,
+    "bearing": 90
+  },
+  "tacticalData": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "color": "#10B981",
+          "label": "Bukit Pemanah",
+          "icon": "🏹"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [39.6105, 24.5015]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "color": "#10B981",
+          "label": ""
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                39.61,
+                24.501
+              ],
+              [
+                39.611,
+                24.501
+              ],
+              [
+                39.611,
+                24.502
+              ],
+              [
+                39.61,
+                24.502
+              ],
+              [
+                39.61,
+                24.501
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "color": "#EF4444",
+          "label": "Manuver Khalid"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              39.613,
+              24.503
+            ],
+            [
+              39.611,
+              24.505
+            ],
+            [
+              39.609,
+              24.502
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-uhud-1",
+      "title": "Bencana Ketidaktaatan pada Pimpinan",
+      "description": "Satu pelanggaran instruksi oleh pasukan pemanah mengorbankan nyawa 70 sahabat terbaik, termasuk Hamzah bin Abdul Muthalib.",
+      "practicalAction": "Patuhi kesepakatan dan instruksi pimpinan selama itu bukan maksiat, meski kita menganggapnya sudah tidak relevan."
+    }
+  ]
+}

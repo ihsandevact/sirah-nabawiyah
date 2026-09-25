@@ -1,0 +1,35 @@
+{
+  "id": "evt-15-fathu-makkah",
+  "order": 15,
+  "title": {
+    "id": "Fathu Makkah (Penaklukan Makkah)",
+    "en": "Conquest of Makkah (Fathu Makkah)",
+    "ar": "فتح مكة"
+  },
+  "description": {
+    "id": "Quraisy melanggar perjanjian Hudaibiyah (8 H). Nabi ﷺ datang bersama 10.000 pasukan menaklukkan Makkah tanpa pertumpahan darah. Berhala dihancurkan, dan amnesti massal diberikan kepada penduduk Makkah yang dulu menyiksa beliau.",
+    "en": "Quraysh broke the treaty of Hudaybiyyah (8 AH). The Prophet ﷺ arrived with 10,000 soldiers, conquering Makkah bloodlessly. Idols were destroyed, and mass amnesty was granted to the very people who once tortured him.",
+    "ar": "نقضت قريش صلح الحديبية (8 هـ). دخل النبي ﷺ بعشرة آلاف مقاتل فاتحاً مكة دون إراقة دماء. حُطمت الأصنام، وأُصدر عفو عام عن أهل مكة الذين عذبوه قديماً."
+  },
+  "bookReference": {
+    "page": 520,
+    "chapter": "Fathu Makkah"
+  },
+  "mapData": {
+    "center": [
+      39.8261,
+      21.4225
+    ],
+    "zoom": 15,
+    "pitch": 60,
+    "bearing": 0
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-fathu-1",
+      "title": "Memaafkan Saat Berkuasa",
+      "description": "Di saat memiliki kekuatan mutlak untuk balas dendam, Nabi ﷺ justru memaafkan mereka dengan kalimat 'Pergilah, kalian semua bebas.'",
+      "practicalAction": "Balas dendam terbaik adalah dengan memperbaiki diri dan memberikan pemaafan ketika kita berada di posisi di atas."
+    }
+  ]
+}

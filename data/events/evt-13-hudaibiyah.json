@@ -1,0 +1,35 @@
+{
+  "id": "evt-13-hudaibiyah",
+  "order": 13,
+  "title": {
+    "id": "Perjanjian Hudaibiyah",
+    "en": "Treaty of Hudaybiyyah",
+    "ar": "صلح الحديبية"
+  },
+  "description": {
+    "id": "Pada tahun 6 H, Nabi ﷺ bermaksud umrah namun dihadang Quraisy. Terjadilah perjanjian damai Hudaibiyah yang secara kasat mata merugikan Muslim, namun Allah menyebutnya sebagai 'Kemenangan yang Nyata' (Fathun Mubin).",
+    "en": "In 6 AH, the Prophet ﷺ intended to perform Umrah but was blocked by Quraysh. The Hudaybiyyah peace treaty was signed, seemingly disadvantageous to Muslims, but Allah called it a 'Clear Victory'.",
+    "ar": "في عام 6 هـ، أراد النبي ﷺ العمرة لكن قريشاً صدته. عُقد صلح الحديبية الذي بدا ظاهره مجحفاً للمسلمين، لكن الله سماه 'فتحاً مبيناً'."
+  },
+  "bookReference": {
+    "page": 450,
+    "chapter": "Perjanjian Hudaibiyah"
+  },
+  "mapData": {
+    "center": [
+      39.6278,
+      21.4334
+    ],
+    "zoom": 13,
+    "pitch": 20,
+    "bearing": 0
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-hudaibiyah-1",
+      "title": "Visi Strategis Jangka Panjang",
+      "description": "Nabi ﷺ mengalah pada klausul-klausul egois demi mendapatkan pengakuan diplomatik dan masa damai 10 tahun untuk menyebarkan Islam.",
+      "practicalAction": "Terkadang kita perlu 'mengalah untuk menang' dan menghindari konflik frontal demi mencapai tujuan strategis yang lebih besar."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "evt-14-khaibar",
+  "order": 14,
+  "title": {
+    "id": "Penaklukan Benteng Khaibar",
+    "en": "Conquest of Khaybar",
+    "ar": "غزوة خيبر"
+  },
+  "description": {
+    "id": "Pusat konspirasi Yahudi yang mendanai Perang Ahzab berada di Khaibar (7 H). Pasukan Muslim berhasil menembus benteng-benteng tak tertembus berkat kepahlawanan Ali bin Abi Thalib.",
+    "en": "The center of Jewish conspiracies funding the Ahzab war was in Khaybar (7 AH). Muslim forces penetrated the impenetrable forts thanks to the heroism of Ali bin Abi Talib.",
+    "ar": "كان مركز المؤامرات اليهودية الذي موّل حرب الأحزاب في خيبر (7 هـ). اخترقت القوات الإسلامية الحصون المنيعة بفضل بطولة علي بن أبي طالب."
+  },
+  "bookReference": {
+    "page": 480,
+    "chapter": "Perang Khaibar"
+  },
+  "mapData": {
+    "center": [
+      39.2933,
+      25.6983
+    ],
+    "zoom": 12,
+    "pitch": 45,
+    "bearing": -20
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-khaibar-1",
+      "title": "Penyelesaian Sumber Konflik",
+      "description": "Nabi memotong akar permasalahan yang selalu menyokong musuh dari belakang, memastikan keamanan regional Madinah seutuhnya.",
+      "practicalAction": "Jangan hanya mengobati gejala suatu masalah, carilah akar masalah utamanya dan selesaikan dari sana."
+    }
+  ]
+}

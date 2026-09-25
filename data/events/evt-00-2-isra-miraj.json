@@ -1,0 +1,35 @@
+{
+  "id": "evt-00-2-isra-miraj",
+  "order": 0.2,
+  "title": {
+    "id": "Perjalanan Isra' Mi'raj",
+    "en": "The Night Journey (Isra' Mi'raj)",
+    "ar": "الإسراء والمعراج"
+  },
+  "description": {
+    "id": "Di tengah masa duka setelah wafatnya Khadijah dan Abu Thalib, Allah menghibur Nabi ﷺ dengan perjalanan malam dari Masjidil Haram ke Masjidil Aqsha, lalu naik ke Sidratul Muntaha untuk menerima perintah shalat 5 waktu.",
+    "en": "Amidst the Year of Sorrow after the death of Khadijah and Abu Talib, Allah comforted the Prophet ﷺ with a night journey from Al-Masjid Al-Haram to Al-Masjid Al-Aqsa, then ascending to the Heavens to receive the command of the 5 daily prayers.",
+    "ar": "في عام الحزن بعد وفاة خديجة وأبي طالب، أسرى الله بنبيه ﷺ ليلاً من المسجد الحرام إلى المسجد الأقصى، ثم عرج به إلى سدرة المنتهى لتلقي فرض الصلاة."
+  },
+  "bookReference": {
+    "page": 200,
+    "chapter": "Isra' dan Mi'raj"
+  },
+  "mapData": {
+    "center": [
+      35.2354,
+      31.7761
+    ],
+    "zoom": 15,
+    "pitch": 45,
+    "bearing": 0
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-isra-1",
+      "title": "Shalat sebagai Pelipur Lara",
+      "description": "Hadiah terbesar dari perjalanan agung ini bukanlah emas atau tahta, melainkan ibadah shalat yang menjadi sarana komunikasi langsung hamba dengan Penciptanya.",
+      "practicalAction": "Jadikan shalat sebagai solusi pertama saat menghadapi tekanan hidup."
+    }
+  ]
+}

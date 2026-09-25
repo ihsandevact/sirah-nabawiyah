@@ -1,0 +1,35 @@
+{
+  "id": "evt-00-b-bani-saad",
+  "order": -0.3,
+  "title": {
+    "id": "Masa Susuan di Perkampungan Bani Sa'ad",
+    "en": "Nursing in the Banu Sa'ad Tribe",
+    "ar": "الرضاعة في ديار بني سعد"
+  },
+  "description": {
+    "id": "Sesuai tradisi bangsawan Arab, bayi Muhammad ﷺ disusukan oleh Halimah as-Sa'diyah di padang pasir Bani Sa'ad agar tumbuh sehat dan menguasai bahasa Arab yang murni (Fushah). Kehadiran beliau membawa keberkahan melimpah bagi keluarga miskin Halimah.",
+    "en": "Following Arab noble traditions, baby Muhammad ﷺ was nursed by Halimah as-Sa'diyah in the Banu Sa'ad desert to grow healthy and master pure Arabic (Fushah). His presence brought immense blessings to Halimah's poor family.",
+    "ar": "وفقاً لتقاليد أشراف العرب، أُرضع الطفل محمد ﷺ في بادية بني سعد على يد حليمة السعدية لينشأ صحيحاً وفصيحاً. وقد جلبت بركته خيراً وفيراً لعائلة حليمة الفقيرة."
+  },
+  "bookReference": {
+    "page": 56,
+    "chapter": "Kelahiran dan Empat Puluh Tahun Sebelum Kenabian"
+  },
+  "mapData": {
+    "center": [
+      40.4136,
+      21.2703
+    ],
+    "zoom": 11,
+    "pitch": 30,
+    "bearing": 0
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-saad-1",
+      "title": "Pentingnya Lingkungan Sejak Dini",
+      "description": "Membawa bayi ke gurun bukan sekadar untuk udara bersih, tapi untuk membangun mental tangguh dan bahasa yang luhur sejak usia emas.",
+      "practicalAction": "Perhatikan lingkungan pergaulan dan tontonan anak-anak sejak dini, karena lingkungan membentuk karakter dasar."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "evt-00-c-khadijah",
+  "order": -0.2,
+  "title": {
+    "id": "Pernikahan dengan Bunda Khadijah",
+    "en": "Marriage to Khadijah",
+    "ar": "الزواج من خديجة"
+  },
+  "description": {
+    "id": "Khadijah binti Khuwailid, seorang saudagar wanita kaya raya, terkesan dengan kejujuran (Al-Amin) Muhammad ﷺ dalam memimpin kafilah dagangnya ke Syam. Ia pun meminang pemuda 25 tahun tersebut, membentuk keluarga teladan yang penuh kasih.",
+    "en": "Khadijah bint Khuwaylid, a wealthy businesswoman, was deeply impressed by the honesty (Al-Amin) of Muhammad ﷺ while leading her caravan to ash-Sham. She proposed to the 25-year-old, forming an exemplary family.",
+    "ar": "أُعجبت خديجة بنت خويلد، سيدة الأعمال الثرية، بأمانة محمد ﷺ أثناء قيادته لقافلتها التجارية إلى الشام. فعرضت الزواج على الشاب البالغ من العمر 25 عاماً، ليؤسسا أسرة مثالية."
+  },
+  "bookReference": {
+    "page": 63,
+    "chapter": "Pernikahan dengan Khadijah"
+  },
+  "mapData": {
+    "center": [
+      39.8273,
+      21.4217
+    ],
+    "zoom": 16,
+    "pitch": 0,
+    "bearing": 0
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-khadijah-1",
+      "title": "Kejujuran adalah Modal Utama Bisnis",
+      "description": "Nabi tidak memiliki harta berlimpah, tetapi memiliki kejujuran dan profesionalisme yang luar biasa (Al-Amin), yang justru menjadi daya tarik bagi Khadijah sang pemodal besar.",
+      "practicalAction": "Bangunlah integritas dan kejujuran dalam berbisnis, karena kepercayaan adalah modal yang lebih berharga dari uang."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "evt-00-d-hajar-aswad",
+  "order": -0.1,
+  "title": {
+    "id": "Pemugaran Ka'bah & Peletakan Hajar Aswad",
+    "en": "Rebuilding the Kaaba & Placing the Black Stone",
+    "ar": "بناء الكعبة ووضع الحجر الأسود"
+  },
+  "description": {
+    "id": "Saat Nabi berusia 35 tahun, banjir besar merusak Ka'bah. Kabilah Quraisy berselisih hingga nyaris menumpahkan darah tentang siapa yang berhak meletakkan Hajar Aswad. Muhammad ﷺ dengan kecerdasannya menyelesaikan krisis ini dengan membentangkan sorban agar semua kabilah bisa mengangkat batu itu bersama-sama.",
+    "en": "When the Prophet was 35, a flood damaged the Kaaba. The Quraysh tribes nearly fought over who would place the Black Stone. Muhammad ﷺ resolved the crisis by placing it on a cloth and having all tribal leaders lift it together.",
+    "ar": "عندما بلغ النبي 35 عاماً، دمر سيل الكعبة. كادت قبائل قريش تتقاتل حول من يضع الحجر الأسود. فحل محمد ﷺ الأزمة بذكاء بأن وضع الحجر في ثوب ليحمله كل زعماء القبائل معاً."
+  },
+  "bookReference": {
+    "page": 65,
+    "chapter": "Pemugaran Ka'bah dan Penyelesaian Perselisihan"
+  },
+  "mapData": {
+    "center": [
+      39.8261,
+      21.4225
+    ],
+    "zoom": 17,
+    "pitch": 60,
+    "bearing": 45
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-kaaba-1",
+      "title": "Kepemimpinan yang Mempersatukan (Win-Win Solution)",
+      "description": "Solusi Nabi tidak hanya cerdas, tetapi menjaga kehormatan semua pihak sehingga persatuan masyarakat tetap terjaga.",
+      "practicalAction": "Jadilah *problem solver* yang meredakan ketegangan, bukan provokator yang memperkeruh suasana."
+    }
+  ]
+}

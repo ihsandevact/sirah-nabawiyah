@@ -24,6 +24,23 @@
     "pitch": 45,
     "bearing": 20
   },
+  "tacticalData": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "color": "#F59E0B",
+          "label": "Lembah 'Aqabah",
+          "icon": "⛺"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [39.882194, 21.415194]
+        }
+      }
+    ]
+  },
   "ibrahs": [
     {
       "id": "ibr-aqabah-1",

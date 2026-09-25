@@ -24,6 +24,23 @@
     "pitch": 55,
     "bearing": 45
   },
+  "tacticalData": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "color": "#10B981",
+          "label": "Lokasi Masjid",
+          "icon": "🕌"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [39.6111, 24.4672]
+        }
+      }
+    ]
+  },
   "ibrahs": [
     {
       "id": "ibr-nabawi-1",

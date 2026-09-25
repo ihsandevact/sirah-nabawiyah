@@ -1,0 +1,80 @@
+{
+  "id": "evt-12-khandaq",
+  "order": 12,
+  "title": {
+    "id": "Perang Khandaq (Ahzab)",
+    "en": "Battle of the Trench (Khandaq)",
+    "ar": "غزوة الخندق (الأحزاب)"
+  },
+  "description": {
+    "id": "Pasukan koalisi (Ahzab) 10.000 prajurit mengepung Madinah (5 H). Atas saran Salman Al-Farisi, umat Islam menggali parit raksasa (Khandaq) di batas utara kota, sebuah taktik pertahanan yang asing bagi bangsa Arab.",
+    "en": "A coalition force (Ahzab) of 10,000 soldiers besieged Madinah (5 AH). Upon Salman Al-Farisi's advice, Muslims dug a massive trench (Khandaq) across the northern border, an alien tactic to Arabs.",
+    "ar": "حاصر جيش التحالف (الأحزاب) المكون من 10,000 مقاتل المدينة (5 هـ). وبناءً على نصيحة سلمان الفارسي، حفر المسلمون خندقاً ضخماً في شمال المدينة، وهو تكتيك لم تعهده العرب."
+  },
+  "bookReference": {
+    "page": 410,
+    "chapter": "Perang Khandaq"
+  },
+  "mapData": {
+    "center": [
+      39.5997,
+      24.4842
+    ],
+    "zoom": 14,
+    "pitch": 45,
+    "bearing": -15
+  },
+  "tacticalData": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "color": "#3B82F6",
+          "label": "Garis Parit (Khandaq)"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              39.585,
+              24.486
+            ],
+            [
+              39.595,
+              24.487
+            ],
+            [
+              39.605,
+              24.485
+            ],
+            [
+              39.615,
+              24.482
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "color": "#3B82F6",
+          "label": "",
+          "icon": "⛏️"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [39.600, 24.486]
+        }
+      }
+    ]
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-khandaq-1",
+      "title": "Mengadopsi Ilmu dari Luar",
+      "description": "Nabi ﷺ tidak segan menerima taktik Persia dari Salman. Hikmah (kebijaksanaan) adalah barang hilangnya umat Islam, di mana pun ia berada, kita berhak mengambilnya.",
+      "practicalAction": "Bersikap terbuka terhadap teknologi dan ilmu manajemen modern dari bangsa mana pun selama membawa manfaat."
+    }
+  ]
+}

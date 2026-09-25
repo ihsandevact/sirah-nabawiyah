@@ -1,0 +1,35 @@
+{
+  "id": "evt-16-wafat",
+  "order": 16,
+  "title": {
+    "id": "Haji Wada' & Wafatnya Rasulullah ﷺ",
+    "en": "Farewell Hajj & The Prophet's Passing",
+    "ar": "حجة الوداع ووفاة رسول الله ﷺ"
+  },
+  "description": {
+    "id": "Setelah menyampaikan khutbah bersejarah di Arafah pada Haji Wada' yang mendeklarasikan HAM dan kesempurnaan agama Islam, Nabi Muhammad ﷺ jatuh sakit. Beliau wafat pada Senin, 12 Rabiul Awal 11 H di kamar Aisyah.",
+    "en": "After delivering the historic sermon at Arafah during the Farewell Hajj declaring human rights and the completion of Islam, Prophet Muhammad ﷺ fell ill. He passed away on Monday, 12th Rabi al-Awwal 11 AH in Aisha's room.",
+    "ar": "بعد خطبة الوداع التاريخية في عرفة التي أعلنت حقوق الإنسان واكتمال الدين، مرض النبي محمد ﷺ. وتوفي يوم الإثنين 12 ربيع الأول 11 هـ في حجرة عائشة."
+  },
+  "bookReference": {
+    "page": 600,
+    "chapter": "Wafatnya Sang Nabi"
+  },
+  "mapData": {
+    "center": [
+      39.6111,
+      24.4672
+    ],
+    "zoom": 18,
+    "pitch": 60,
+    "bearing": 90
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-wafat-1",
+      "title": "Kematian adalah Kepastian bagi Manusia Terhebat Sekalipun",
+      "description": "Wafatnya Nabi membuktikan bahwa beliau adalah manusia utusan, bukan tuhan. Abu Bakar mengingatkan: 'Barangsiapa menyembah Muhammad, Muhammad telah mati. Tapi barangsiapa menyembah Allah, Allah Maha Hidup.'",
+      "practicalAction": "Gantungkan harapan dan ketaatan mutlak hanya kepada Allah, bukan kepada figur manusia sebaik apa pun dia."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "evt-00-gua-hira",
+  "order": 0,
+  "title": {
+    "id": "Wahyu Pertama di Gua Hira",
+    "en": "First Revelation in Cave Hira",
+    "ar": "نزول الوحي في غار حراء"
+  },
+  "description": {
+    "id": "Pada usia 40 tahun, Nabi Muhammad ﷺ mengasingkan diri (tahannuth) di Gua Hira, Jabal Nur. Di sinilah Malaikat Jibril datang membawa wahyu pertama, lima ayat dari Surah Al-Alaq, menandai dimulainya kerasulan beliau.",
+    "en": "At the age of 40, Prophet Muhammad ﷺ secluded himself in the Cave of Hira on Jabal Nur. Here, Angel Jibril brought the first revelation, the first five verses of Surah Al-Alaq, marking the beginning of his prophethood.",
+    "ar": "في سن الأربعين، كان النبي محمد ﷺ يتعبد في غار حراء بجبل النور. وهناك نزل عليه جبريل بأول الوحي، وهي الخمس آيات الأولى من سورة العلق، معلناً بداية النبوة."
+  },
+  "bookReference": {
+    "page": 90,
+    "chapter": "Di Bawah Naungan Kenabian dan Kerasulan"
+  },
+  "mapData": {
+    "center": [
+      39.8594,
+      21.4578
+    ],
+    "zoom": 16,
+    "pitch": 60,
+    "bearing": -45
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-hira-1",
+      "title": "Pentingnya Kontemplasi (Tafakkur)",
+      "description": "Nabi memisahkan diri dari hiruk-pikuk kesesatan Makkah untuk mencari kebenaran, menunjukkan bahwa kejelasan pikiran didapat dari keheningan.",
+      "practicalAction": "Luangkan waktu secara rutin (seperti iktikaf atau sejenak merenung) menjauh dari media sosial untuk menenangkan hati dan pikiran."
+    }
+  ]
+}
