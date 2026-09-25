@@ -85,6 +85,7 @@ export default function NarrativeCard({ event, language, isActive, onActive }: N
 
   return (
     <div
+      id={event.id}
       ref={cardRef}
       className="min-h-[80vh] flex flex-col justify-center px-4 py-16 sm:px-8 max-w-2xl mx-auto"
       dir={dir}
