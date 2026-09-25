@@ -1,0 +1,44 @@
+[
+  {
+    "id": "q1",
+    "question": {
+      "id": "Siapakah panglima pasukan gajah yang mencoba menghancurkan Ka'bah pada tahun kelahiran Nabi ﷺ?",
+      "en": "Who was the commander of the elephant army that tried to destroy the Kaaba in the year of the Prophet's ﷺ birth?",
+      "ar": "من هو قائد جيش الفيل الذي حاول هدم الكعبة في عام ولادة النبي ﷺ؟"
+    },
+    "options": {
+      "id": ["Abu Sufyan", "Namrud", "Abrahah Al-Asyram", "Firaun"],
+      "en": ["Abu Sufyan", "Nimrod", "Abrahah Al-Ashram", "Pharaoh"],
+      "ar": ["أبو سفيان", "النمرود", "أبرهة الأشرم", "فرعون"]
+    },
+    "correctIndex": 2
+  },
+  {
+    "id": "q2",
+    "question": {
+      "id": "Di perang manakah Khalid bin Walid (saat belum masuk Islam) melakukan manuver dari balik bukit yang mengakibatkan syahidnya Hamzah?",
+      "en": "In which battle did Khalid bin Walid (before embracing Islam) flank from behind the hill, leading to the martyrdom of Hamzah?",
+      "ar": "في أي غزوة قام خالد بن الوليد (قبل إسلامه) بالالتفاف من خلف الجبل مما أدى لاستشهاد حمزة؟"
+    },
+    "options": {
+      "id": ["Perang Badar", "Perang Uhud", "Perang Khandaq", "Perang Khaibar"],
+      "en": ["Battle of Badr", "Battle of Uhud", "Battle of Khandaq", "Battle of Khaybar"],
+      "ar": ["غزوة بدر", "غزوة أحد", "غزوة الخندق", "غزوة خيبر"]
+    },
+    "correctIndex": 1
+  },
+  {
+    "id": "q3",
+    "question": {
+      "id": "Apa taktik yang diusulkan Salman Al-Farisi untuk mempertahankan Madinah dari serangan 10.000 pasukan sekutu (Ahzab)?",
+      "en": "What tactic did Salman the Persian suggest to defend Madinah from the attack of 10,000 confederate soldiers (Ahzab)?",
+      "ar": "ما هو التكتيك الذي اقترحه سلمان الفارسي للدفاع عن المدينة من هجوم 10,000 من الأحزاب؟"
+    },
+    "options": {
+      "id": ["Membangun benteng batu", "Menggali parit raksasa", "Membakar hutan", "Menabur racun di sumur"],
+      "en": ["Building stone fortresses", "Digging a massive trench", "Burning the forest", "Poisoning the wells"],
+      "ar": ["بناء قلاع حجرية", "حفر خندق ضخم", "حرق الغابة", "تسميم الآبار"]
+    },
+    "correctIndex": 1
+  }
+]
