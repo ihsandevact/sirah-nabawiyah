@@ -106,7 +106,7 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
         id: "tactical-point",
         type: "circle",
         source: sourceId,
-        filter: ["==", ["geometry-type"], "Point"],
+        filter: ["all", ["==", ["geometry-type"], "Point"], ["!", ["has", "icon"]]],
         paint: {
           "circle-radius": 6,
           "circle-color": ["get", "color"],
@@ -116,6 +116,19 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
       });
       
       map.current.addLayer({
+        id: "tactical-icon",
+        type: "symbol",
+        source: sourceId,
+        filter: ["all", ["==", ["geometry-type"], "Point"], ["has", "icon"]],
+        layout: {
+          "text-field": ["get", "icon"],
+          "text-size": 32,
+          "text-anchor": "bottom",
+          "text-allow-overlap": true
+        }
+      });
+
+      map.current.addLayer({
         id: "tactical-label",
         type: "symbol",
         source: sourceId,
@@ -123,7 +136,7 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
           "text-field": ["get", "label"],
           "text-size": 14,
           "text-anchor": "top",
-          "text-offset": [0, 1]
+          "text-offset": [0, 0.5]
         },
         paint: {
           "text-color": ["get", "color"],
@@ -141,6 +154,29 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
         src.setData({ type: "FeatureCollection", features: [] });
       }
     }
+
+    // Animation Loop for Marching Ants effect on lines
+    let animationId: number;
+    let step = 0;
+    const dashArraySequence = [
+      [0, 4, 3], [0.5, 4, 2.5], [1, 4, 2], [1.5, 4, 1.5], [2, 4, 1], [2.5, 4, 0.5], [3, 4, 0],
+      [0, 0, 3, 4], [0, 0.5, 3, 4], [0, 1, 3, 4], [0, 1.5, 3, 4], [0, 2, 3, 4], [0, 2.5, 3, 4], [0, 3, 3, 4]
+    ];
+    
+    const animateDashArray = () => {
+      if (map.current && map.current.getLayer("tactical-line")) {
+        const newStep = Math.floor(step / 2) % dashArraySequence.length;
+        map.current.setPaintProperty("tactical-line", "line-dasharray", dashArraySequence[newStep]);
+        step++;
+      }
+      animationId = requestAnimationFrame(animateDashArray);
+    };
+    
+    animateDashArray();
+
+    return () => {
+      if (animationId) cancelAnimationFrame(animationId);
+    };
   }, [tacticalData, mapLoaded]);
 
   return (
