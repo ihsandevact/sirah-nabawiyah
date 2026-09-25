@@ -1,0 +1,35 @@
+{
+  "id": "evt-konspirasi-darunnadwah",
+  "order": 2,
+  "title": {
+    "id": "Konspirasi di Darun Nadwah",
+    "en": "Conspiracy at Darun Nadwah",
+    "ar": "المؤامرة في دار الندوة"
+  },
+  "description": {
+    "id": "Para pemuka Quraisy berkumpul di Darun Nadwah (gedung parlemen Makkah di dekat Ka'bah) untuk merencanakan makar pembunuhan terhadap Nabi Muhammad ﷺ sebelum beliau sempat berhijrah ke Yatsrib.",
+    "en": "Quraysh leaders gathered at Darun Nadwah (the parliament building near the Kaaba) to plot the assassination of Prophet Muhammad ﷺ before he could migrate to Yathrib.",
+    "ar": "اجتمع زعماء قريش في دار الندوة للتآمر على اغتيال النبي محمد ﷺ قبل أن يتمكن من الهجرة إلى يثرب."
+  },
+  "bookReference": {
+    "page": 217,
+    "chapter": "Parlemen Quraisy (Darun Nadwah)"
+  },
+  "mapData": {
+    "center": [
+      39.826168,
+      21.42251
+    ],
+    "zoom": 17,
+    "pitch": 50,
+    "bearing": 0
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-darunnadwah-1",
+      "title": "Makar Manusia vs Skenario Allah",
+      "description": "Sebaik apa pun rencana keburukan disusun oleh para elit yang berkuasa, skenario perlindungan dari Allah selalu lebih sempurna.",
+      "practicalAction": "Jangan pernah takut terhadap konspirasi dan ancaman pihak-pihak yang zalim selama kita berada di atas jalan kebenaran."
+    }
+  ]
+}

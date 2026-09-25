@@ -1,0 +1,35 @@
+{
+  "id": "evt-gua-tsur",
+  "order": 3,
+  "title": {
+    "id": "Perlindungan di Gua Tsur",
+    "en": "Protection in the Cave of Thawr",
+    "ar": "اللجوء إلى غار ثور"
+  },
+  "description": {
+    "id": "Nabi Muhammad ﷺ dan Abu Bakar ash-Shiddiq berlindung di Gua Tsur selama tiga malam (malam Jumat, Sabtu, dan Ahad). Gua ini terletak di puncak bukit yang tinggi dan terjal di sebelah selatan Makkah, kebalikan dari arah Madinah, sebagai strategi mengelabui pengejaran kafir Quraisy.",
+    "en": "Prophet Muhammad ﷺ and Abu Bakar ash-Shiddiq sought refuge in the Cave of Thawr for three nights. The cave is located at the peak of a high, steep mountain south of Makkah, opposite the direction of Madinah, as a strategy to evade the pursuit of the Quraysh.",
+    "ar": "لجأ النبي محمد ﷺ وأبو بكر الصديق إلى غار ثور لثلاث ليالٍ. يقع الغار في قمة جبل وعر جنوب مكة، في الاتجاه المعاكس للمدينة، كخطة لتضليل مطاردة قريش."
+  },
+  "bookReference": {
+    "page": 222,
+    "chapter": "Bersembunyi di Gua Tsur"
+  },
+  "mapData": {
+    "center": [
+      39.845,
+      21.3789
+    ],
+    "zoom": 16,
+    "pitch": 60,
+    "bearing": -45
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-tsur-1",
+      "title": "Keseimbangan Ikhtiar dan Tawakal",
+      "description": "Berlindung di gua Tsur, merencanakan rute yang tidak biasa, dan menugaskan intelijen (Abdullah bin Abu Bakar) adalah bentuk ikhtiar maksimal. Tawakal terlihat saat Nabi ﷺ menenangkan Abu Bakar: 'La Tahzan, Innallaha Ma'ana' (Jangan bersedih, sesungguhnya Allah bersama kita).",
+      "practicalAction": "Dalam menghadapi krisis, kerahkan seluruh kemampuan intelektual dan fisik, lalu serahkan hasil akhirnya kepada Allah tanpa keraguan."
+    }
+  ]
+}

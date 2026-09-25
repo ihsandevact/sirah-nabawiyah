@@ -1,0 +1,35 @@
+{
+  "id": "evt-masuk-madinah",
+  "order": 6,
+  "title": {
+    "id": "Masuk ke Jantung Kota Yatsrib",
+    "en": "Entering the Heart of Yathrib",
+    "ar": "الدخول إلى قلب يثرب (المدينة)"
+  },
+  "description": {
+    "id": "Rasulullah ﷺ memasuki jantung kota Madinah yang disambut dengan gegap gempita oleh para penduduknya. Beliau melepaskan kekang untanya (Al-Qashwa) agar berjalan sesuai perintah Allah, hingga akhirnya menderum di tempat yang kelak menjadi Masjid Nabawi.",
+    "en": "The Prophet ﷺ entered the heart of Madinah and was greeted with immense joy. He let go of his camel's reins (Al-Qaswa) allowing it to be guided by Allah, until it knelt at the spot that would later become the Prophet's Mosque.",
+    "ar": "دخل النبي ﷺ قلب المدينة المنورة واستقبله أهلها بفرح عارم. أطلق زمام ناقته القصواء لتسير بأمر الله حتى بركت في الموضع الذي سيصبح المسجد النبوي."
+  },
+  "bookReference": {
+    "page": 234,
+    "chapter": "Masuk Madinah"
+  },
+  "mapData": {
+    "center": [
+      39.6111,
+      24.4672
+    ],
+    "zoom": 15,
+    "pitch": 45,
+    "bearing": -20
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-madinah-1",
+      "title": "Keadilan Melalui Unta Al-Qashwa",
+      "description": "Dengan membiarkan untanya memilih tempat berhenti, Nabi ﷺ menghindari kecemburuan di antara kabilah Anshar yang saling berebut ingin menjamu beliau di rumah mereka.",
+      "practicalAction": "Dalam memimpin sebuah tim, seorang pemimpin harus pandai menjaga perasaan dan menghindari pilih kasih agar soliditas tim tetap terjaga."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "evt-muakhah",
+  "order": 8,
+  "title": {
+    "id": "Persaudaraan Muhajirin & Anshar",
+    "en": "Brotherhood of Muhajirun & Ansar",
+    "ar": "المؤاخاة بين المهاجرين والأنصار"
+  },
+  "description": {
+    "id": "Setelah masalah tempat berkumpul (masjid) selesai, Nabi Muhammad ﷺ mempersaudarakan kaum Muhajirin (pendatang dari Makkah) dan Anshar (penduduk asli Madinah). Persaudaraan ini (*Al-Mu'akhah*) didasarkan pada ikatan akidah, bukan nasab atau kesukuan.",
+    "en": "After the mosque was built, Prophet Muhammad ﷺ formed brotherhood bonds between the Muhajirun (emigrants from Makkah) and the Ansar (helpers of Madinah). This brotherhood (Al-Mu'akhah) was based on faith, transcending blood or tribal ties.",
+    "ar": "بعد الانتهاء من بناء المسجد، آخى النبي محمد ﷺ بين المهاجرين (القادمين من مكة) والأنصار (أهل المدينة). قامت هذه المؤاخاة على أساس العقيدة، لا النسب أو القبلية."
+  },
+  "bookReference": {
+    "page": 242,
+    "chapter": "Mempersaudarakan Kaum Muslimin"
+  },
+  "mapData": {
+    "center": [
+      39.613,
+      24.468
+    ],
+    "zoom": 15,
+    "pitch": 20,
+    "bearing": -10
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-muakhah-1",
+      "title": "Solusi Sosio-Ekonomi Berbasis Empati",
+      "description": "Kaum Anshar dengan sukarela membagi harta dan rumah mereka kepada Muhajirin yang datang tanpa membawa apa-apa, mengatasi krisis perumahan dan ekonomi pendatang secara instan.",
+      "practicalAction": "Dalam menanggulangi masalah pengungsi atau migran, pendekatan empati dan asimilasi sosial terbukti jauh lebih sukses daripada sekadar bantuan finansial formal."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "evt-piagam-madinah",
+  "order": 9,
+  "title": {
+    "id": "Deklarasi Konstitusi Madinah",
+    "en": "Declaration of the Constitution of Madinah",
+    "ar": "إعلان صحيفة المدينة"
+  },
+  "description": {
+    "id": "Nabi ﷺ menginisiasi Piagam Madinah (*Mithaq Al-Madinah*), sebuah perjanjian damai dan kesepakatan kewarganegaraan antara umat Islam, komunitas Yahudi, dan suku-suku musyrik di Madinah, menjadikan mereka satu umat (bangsa) dalam pertahanan wilayah.",
+    "en": "The Prophet ﷺ initiated the Constitution of Madinah, a peace treaty and citizenship agreement between Muslims, Jewish communities, and polytheist tribes in Madinah, forging them into a single nation bound by mutual defense.",
+    "ar": "أبرم النبي ﷺ صحيفة المدينة (ميثاق المدينة)، وهي معاهدة سلام ومواطنة بين المسلمين واليهود والقبائل المشركة، جعلتهم أمة واحدة في الدفاع عن المدينة."
+  },
+  "bookReference": {
+    "page": 245,
+    "chapter": "Perjanjian Kerukunan dengan Pihak Lain"
+  },
+  "mapData": {
+    "center": [
+      39.615,
+      24.47
+    ],
+    "zoom": 14,
+    "pitch": 0,
+    "bearing": 0
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-piagam-1",
+      "title": "Toleransi Pluralisme di Bawah Supremasi Hukum",
+      "description": "Konstitusi ini memberikan jaminan kebebasan beragama bagi Yahudi dan suku lain, selama mereka ikut mematuhi sistem hukum, tidak berkhianat, dan ikut mempertahankan kota dari musuh luar.",
+      "practicalAction": "Hargai kebinekaan dalam masyarakat yang plural, namun tegaskan batasan hukum yang harus dihormati semua pihak demi keamanan bersama."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "evt-rute-pantai",
+  "order": 4,
+  "title": {
+    "id": "Perjalanan Hijrah Jalur Pesisir",
+    "en": "Hijrah Journey via the Coastal Route",
+    "ar": "رحلة الهجرة عبر طريق الساحل"
+  },
+  "description": {
+    "id": "Setelah meninggalkan Gua Tsur, rombongan mengambil jalur yang tidak lazim, yakni menyusuri pantai Laut Merah menuju arah barat daya sebelum memutar ke utara menuju Yatsrib. Di rute inilah Suraqah bin Malik gagal mengejar dan tenda Ummu Ma'bad disinggahi.",
+    "en": "After leaving the Cave of Thawr, the group took an unconventional route along the Red Sea coast heading southwest before turning north to Yathrib. It was on this route that Suraqah bin Malik failed to capture them, and they visited the tent of Ummu Ma'bad.",
+    "ar": "بعد الخروج من غار ثور، سلك الركب طريقاً غير مألوف عبر ساحل البحر الأحمر نحو الجنوب الغربي قبل الاتجاه شمالاً إلى يثرب. في هذا الطريق فشل سراقة بن مالك في اللحاق بهم، ومروا بخيمة أم معبد."
+  },
+  "bookReference": {
+    "page": 226,
+    "chapter": "Menyusuri Jalan Pesisir Pantai"
+  },
+  "mapData": {
+    "center": [
+      39.1105,
+      22.062
+    ],
+    "zoom": 9,
+    "pitch": 30,
+    "bearing": -15
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-pantai-1",
+      "title": "Inovasi Keluar dari Kebiasaan (Out of the Box)",
+      "description": "Menghindari rute utama kafilah dagang adalah keputusan taktis (anti-mainstream) untuk mengecoh pengejar yang mencari di jalan yang sudah diketahui umum.",
+      "practicalAction": "Dalam mencari solusi masalah yang kompleks, terkadang kita harus berani mengambil pendekatan atau metode yang tidak konvensional (out of the box)."
+    }
+  ]
+}

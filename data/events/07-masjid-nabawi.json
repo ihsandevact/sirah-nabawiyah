@@ -1,0 +1,41 @@
+{
+  "id": "evt-masjid-nabawi",
+  "order": 7,
+  "title": {
+    "id": "Pembangunan Masjid Nabawi",
+    "en": "Construction of Al-Masjid an-Nabawi",
+    "ar": "بناء المسجد النبوي"
+  },
+  "description": {
+    "id": "Masjid Nabawi dibangun di atas tanah milik dua anak yatim (Sahl dan Suhail) yang telah dibeli secara sah. Nabi ﷺ ikut serta memanggul batu bata dan bernyanyi bersama para sahabat, memupuk semangat gotong royong.",
+    "en": "The Prophet's Mosque was built on land owned by two orphans (Sahl and Suhail), which was lawfully purchased. The Prophet ﷺ himself participated in carrying bricks, fostering a spirit of mutual cooperation.",
+    "ar": "بني المسجد النبوي على أرض يمتلكها غلامان يتيمان (سهل وسهيل) تم شراؤها بشكل شرعي. شارك النبي ﷺ بنفسه في حمل اللبن (الطوب) منشداً مع الصحابة، لتعزيز روح العمل الجماعي."
+  },
+  "bookReference": {
+    "page": 240,
+    "chapter": "Membangun Masjid Nabawi"
+  },
+  "mapData": {
+    "center": [
+      39.6111,
+      24.4672
+    ],
+    "zoom": 17,
+    "pitch": 55,
+    "bearing": 45
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-nabawi-1",
+      "title": "Keteladanan dalam Bekerja (Lead by Example)",
+      "description": "Pemimpin tertinggi agama dan negara ikut turun tangan bekerja kasar mengangkat batu bata dan tidak hanya memberi perintah dari jauh.",
+      "practicalAction": "Jadilah pemimpin yang mau 'turun gelanggang' dan bekerja berdampingan dengan tim untuk menumbuhkan rasa hormat dan solidaritas."
+    },
+    {
+      "id": "ibr-nabawi-2",
+      "title": "Integritas Hak Milik",
+      "description": "Tanah yatim tersebut ditawarkan sebagai hibah, namun Rasulullah ﷺ menolak menerimanya secara cuma-cuma dan bersikeras membelinya dengan harga yang pantas (dibayarkan oleh Abu Bakar).",
+      "practicalAction": "Hargai jerih payah dan properti orang lain, terlebih kelompok yang lemah (yatim), hindari aji mumpung demi kepentingan publik."
+    }
+  ]
+}

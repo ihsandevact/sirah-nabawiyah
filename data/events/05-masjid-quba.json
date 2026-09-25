@@ -1,0 +1,35 @@
+{
+  "id": "evt-masjid-quba",
+  "order": 5,
+  "title": {
+    "id": "Tiba di Quba & Masjid Pertama",
+    "en": "Arrival at Quba & The First Mosque",
+    "ar": "الوصول إلى قباء وبناء أول مسجد"
+  },
+  "description": {
+    "id": "Pada hari Senin tanggal 8 Rabiul Awal (tahun ke-14 kenabian), Rasulullah ﷺ tiba di Quba, perkampungan Bani 'Amr bin 'Auf. Di sinilah beliau berdiam selama beberapa hari dan membangun Masjid Quba, masjid pertama yang dibangun atas dasar takwa.",
+    "en": "On Monday, 8th of Rabi' al-Awwal, the Prophet ﷺ arrived at Quba, the settlement of Bani 'Amr bin 'Auf. He stayed there for several days and built the Quba Mosque, the first mosque founded on piety.",
+    "ar": "في يوم الإثنين 8 ربيع الأول، وصل النبي ﷺ إلى قباء، ديار بني عمرو بن عوف. أقام فيها أياماً وأسس مسجد قباء، أول مسجد أسس على التقوى."
+  },
+  "bookReference": {
+    "page": 232,
+    "chapter": "Singgah di Quba"
+  },
+  "mapData": {
+    "center": [
+      39.6171,
+      24.4391
+    ],
+    "zoom": 16,
+    "pitch": 40,
+    "bearing": 10
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-quba-1",
+      "title": "Masjid Sebagai Pusat Peradaban",
+      "description": "Langkah pertama yang dilakukan setibanya di wilayah aman bukan membangun istana atau pasar, melainkan masjid sebagai pusat spiritual dan sosial.",
+      "practicalAction": "Jadikan masjid kembali sebagai tempat memecahkan permasalahan umat, bukan sekadar tempat ritual salat semata."
+    }
+  ]
+}

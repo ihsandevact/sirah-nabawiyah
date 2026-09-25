@@ -1,0 +1,87 @@
+{
+  "id": "evt-perang-badar",
+  "order": 10,
+  "title": {
+    "id": "Pertempuran Badar Al-Kubra",
+    "en": "The Great Battle of Badr",
+    "ar": "غزوة بدر الكبرى"
+  },
+  "description": {
+    "id": "Pada 17 Ramadhan tahun 2 Hijriah, terjadi konfrontasi bersenjata pertama antara 313 pasukan Muslim yang minim persenjataan melawan 1000 pasukan elit Quraisy. Pasukan Islam memenangkan pertempuran ini di lembah Badar yang menentukan eksistensi Islam ke depan.",
+    "en": "On 17th of Ramadan in 2 AH, the first armed confrontation occurred between 313 poorly equipped Muslims and 1,000 elite Quraysh soldiers. The Muslims won this decisive battle in the valley of Badr, securing the future of Islam.",
+    "ar": "في 17 رمضان من السنة الثانية للهجرة، وقعت أول مواجهة مسلحة بين 313 مسلماً بأسلحة بسيطة و1000 من نخبة جيش قريش. انتصر المسلمون في وادي بدر، مما ثبت أركان الإسلام."
+  },
+  "bookReference": {
+    "page": 284,
+    "chapter": "Perang Badar Kubra"
+  },
+  "mapData": {
+    "center": [38.7844, 23.7344],
+    "zoom": 15,
+    "pitch": 60,
+    "bearing": -30
+  },
+  "tacticalData": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "color": "#10B981",
+          "label": "Pasukan Muslim"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[38.783, 23.732], [38.785, 23.732], [38.785, 23.733], [38.783, 23.733], [38.783, 23.732]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "color": "#EF4444",
+          "label": "Pasukan Quraisy"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[38.782, 23.736], [38.786, 23.736], [38.786, 23.738], [38.782, 23.738], [38.782, 23.736]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "color": "#3B82F6",
+          "label": "Sumur Badar"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [38.784, 23.7335]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "color": "#F59E0B",
+          "label": "Pergerakan Quraisy"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [[38.784, 23.736], [38.784, 23.734]]
+        }
+      }
+    ]
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-badar-1",
+      "title": "Pentingnya Musyawarah dan Keterbukaan Pemimpin",
+      "description": "Nabi ﷺ menerima usulan Al-Hubab bin Al-Mundzir (yang lebih ahli geografi militer) untuk memindahkan markas ke dekat sumber air, membuktikan beliau tidak diktator dan terbuka pada masukan bawahan.",
+      "practicalAction": "Dalam mengambil keputusan, selalu buka ruang musyawarah dan jangan ragu mengikuti saran anggota tim yang lebih pakar di bidang teknis."
+    },
+    {
+      "id": "ibr-badar-2",
+      "title": "Kemenangan Ditentukan oleh Kualitas, Bukan Kuantitas",
+      "description": "Pasukan Muslim dengan jumlah dan peralatan 1/3 dari musuh mampu menang telak berkat kedisiplinan, motivasi tinggi (akidah), dan kejelasan visi.",
+      "practicalAction": "Jangan pernah mundur dari kompetisi atau proyek berat hanya karena merasa kekurangan modal/jumlah orang. Fokus pada kedisiplinan dan mental juara."
+    }
+  ]
+}

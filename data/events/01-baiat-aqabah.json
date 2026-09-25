@@ -1,0 +1,41 @@
+{
+  "id": "evt-baiat-aqabah",
+  "order": 1,
+  "title": {
+    "id": "Bai'at 'Aqabah Kedua",
+    "en": "The Second Pledge of 'Aqabah",
+    "ar": "بيعة العقبة الثانية"
+  },
+  "description": {
+    "id": "Tujuh puluh tiga pria dan dua wanita dari Yatsrib datang secara diam-diam di pertengahan hari-hari tasyriq untuk membaiat Nabi Muhammad ﷺ. Mereka berjanji untuk melindungi beliau sebagaimana melindungi keluarga mereka sendiri, yang menjadi fondasi berdirinya negara Islam pertama di Madinah.",
+    "en": "Seventy-three men and two women from Yathrib secretly met and pledged allegiance to Prophet Muhammad ﷺ during the days of Tashriq. They promised to protect him as they would their own families, laying the foundation for the first Islamic state in Madinah.",
+    "ar": "اجتمع ثلاثة وسبعون رجلاً وامرأتان من يثرب سراً في أواسط أيام التشريق لمبايعة النبي محمد ﷺ. وتعاهدوا على حمايته كما يحمون أهليهم، مما أسس لقيام أول دولة إسلامية في المدينة المنورة."
+  },
+  "bookReference": {
+    "page": 204,
+    "chapter": "Bai'at 'Aqabah Kubra (Kedua)"
+  },
+  "mapData": {
+    "center": [
+      39.882194,
+      21.415194
+    ],
+    "zoom": 15,
+    "pitch": 45,
+    "bearing": 20
+  },
+  "ibrahs": [
+    {
+      "id": "ibr-aqabah-1",
+      "title": "Perencanaan Strategis yang Matang",
+      "description": "Nabi ﷺ mengatur pertemuan di tengah malam, di tempat yang tersembunyi (lembah sempit), dan menugaskan Abbas bin 'Abdul Muthalib yang saat itu belum masuk Islam untuk memastikan keamanan perjanjian.",
+      "practicalAction": "Dalam setiap proyek atau kegiatan dakwah besar, jangan abaikan unsur manajemen risiko dan kerahasiaan saat diperlukan."
+    },
+    {
+      "id": "ibr-aqabah-2",
+      "title": "Pengorbanan Penuh Kesadaran",
+      "description": "Penduduk Yatsrib diingatkan oleh Al-'Abbas bin 'Ubadah bahwa membaiat Nabi ﷺ berarti siap dimusuhi oleh seluruh bangsa Arab dan dunia.",
+      "practicalAction": "Keteguhan prinsip membutuhkan kesiapan menanggung risiko dan tidak mudah goyah oleh tekanan lingkungan."
+    }
+  ]
+}
