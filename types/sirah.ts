@@ -20,6 +20,21 @@ export type SirahEvent = {
     en: string;
     ar?: string;
   };
+  detailedContent?: {
+    id: string;
+    en: string;
+    ar?: string;
+  };
+  quranicContext?: {
+    surahName: string;
+    ayahRange: string;
+    arabicText: string;
+    translation: {
+      id: string;
+      en: string;
+    }
+  };
+  distanceMetric?: string;
   bookReference: {
     page: number;
     chapter: string;
