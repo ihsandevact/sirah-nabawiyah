@@ -6,7 +6,8 @@ import { SirahEvent } from "@/types/sirah";
 import NarrativeCard from "./NarrativeCard";
 import LanguageToggle from "./LanguageToggle";
 import DeepDiveModal from "./DeepDiveModal";
-import { Menu, X, Book } from "lucide-react";
+import QuizSection from "./QuizSection";
+import { Menu, X, Book, Search } from "lucide-react";
 
 const MapViewer = dynamic(() => import("./MapViewer"), {
   ssr: false,
@@ -22,6 +23,7 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
   const [activeEvent, setActiveEvent] = useState<SirahEvent | null>(events.length > 0 ? events[0] : null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [modalEvent, setModalEvent] = useState<SirahEvent | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   if (events.length === 0) {
     return <div className="p-8 text-center text-white">No data available.</div>;
@@ -29,6 +31,22 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
 
   const mapData = activeEvent ? activeEvent.mapData : events[0].mapData;
   const isArabic = language === "ar";
+  const dir = isArabic ? "rtl" : "ltr";
+
+  const filteredEvents = events.filter((event) => {
+    const query = searchQuery.toLowerCase();
+    const title = (event.title[language] || event.title['id'] || "").toLowerCase();
+    const desc = (event.description[language] || event.description['id'] || "").toLowerCase();
+    return title.includes(query) || desc.includes(query);
+  });
+
+  const scrollToEvent = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+    setIsSidebarOpen(false); // Close sidebar after clicking
+  };
 
   return (
     <div className="flex flex-col md:flex-row w-full h-full">
@@ -58,34 +76,58 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
           </button>
         </div>
 
+        {/* Search Bar */}
+        <div className="p-4 border-b border-white/10">
+          <div className="relative">
+            <div className={`absolute inset-y-0 ${isArabic ? 'right-3' : 'left-3'} flex items-center pointer-events-none`}>
+              <Search className="w-4 h-4 text-gray-400" />
+            </div>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder={isArabic ? "ابحث عن حدث..." : (language === "en" ? "Search events..." : "Cari peristiwa...")}
+              className={`w-full bg-black/20 border border-white/10 rounded-lg py-2.5 ${isArabic ? 'pr-10 pl-4 text-right' : 'pl-10 pr-4 text-left'} text-sm focus:outline-none focus:border-sand-gold focus:ring-1 focus:ring-sand-gold transition-all text-white placeholder-gray-500`}
+              dir={dir}
+            />
+          </div>
+        </div>
+
         {/* Sidebar Links */}
         <div className="flex-1 overflow-y-auto p-4 space-y-1 scroll-smooth">
-          {events.map((event) => {
-            const isActive = activeEvent?.id === event.id;
-            return (
-              <a
-                key={event.id}
-                href={`#${event.id}`}
-                onClick={() => setIsSidebarOpen(false)}
-                className={`block px-4 py-3 text-sm rounded-xl transition-all duration-300 ${
-                  isActive 
-                    ? "bg-sand-gold/15 text-sand-gold font-bold border-l-4 border-sand-gold shadow-inner" 
-                    : "text-gray-400 hover:bg-white/5 hover:text-gray-200 border-l-4 border-transparent"
-                } ${isArabic ? "text-right font-arabic" : ""}`}
-                dir={isArabic ? "rtl" : "ltr"}
-              >
-                <div className="text-xs uppercase tracking-widest opacity-60 mb-1">
-                  {isArabic ? "الباب" : "Bab"} {event.order < 10 ? `0${event.order}` : event.order}
-                </div>
-                {event.title[language] || event.title['id']}
-              </a>
-            );
-          })}
+          {filteredEvents.length === 0 ? (
+            <div className="text-center text-gray-500 text-sm mt-8">
+              {isArabic ? "لم يتم العثور على أي حدث." : (language === "en" ? "No events found." : "Tidak ada peristiwa yang cocok.")}
+            </div>
+          ) : (
+            filteredEvents.map((event) => {
+              const isActive = activeEvent?.id === event.id;
+              return (
+                <a
+                  key={event.id}
+                  href={`#${event.id}`}
+                  onClick={() => setIsSidebarOpen(false)}
+                  className={`block px-4 py-3 text-sm rounded-xl transition-all duration-300 ${
+                    isActive 
+                      ? "bg-sand-gold/15 text-sand-gold font-bold border-l-4 border-sand-gold shadow-inner" 
+                      : "text-gray-400 hover:bg-white/5 hover:text-gray-200 border-l-4 border-transparent"
+                  } ${isArabic ? "text-right font-arabic" : ""}`}
+                  dir={isArabic ? "rtl" : "ltr"}
+                >
+                  <div className="text-xs uppercase tracking-widest opacity-60 mb-1">
+                    {isArabic ? "الباب" : "Bab"} {event.order < 10 ? `0${event.order}` : event.order}
+                  </div>
+                  {event.title[language] || event.title['id']}
+                </a>
+              );
+            })
+          )}
         </div>
         
         {/* Sidebar Footer */}
-        <div className="p-4 border-t border-white/10 text-center">
-          <a href="/nasab" className="block w-full py-3 rounded-xl bg-sand-gold/20 text-sand-gold hover:bg-sand-gold hover:text-white transition-colors text-sm font-semibold tracking-wide">
+        <div className="p-4 border-t border-white/10 flex flex-col gap-3">
+          <LanguageToggle language={language} onChange={setLanguage} />
+          <a href="/nasab" className="block w-full py-3 rounded-xl bg-sand-gold/20 text-sand-gold hover:bg-sand-gold hover:text-white transition-colors text-sm font-semibold tracking-wide text-center">
             {isArabic ? "شجرة النسب" : "Pohon Nasab"}
           </a>
         </div>
@@ -100,8 +142,7 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
       )}
 
       {/* Mobile Map (Top Fixed) / Desktop Map (Right Sticky) */}
-      {/* Restored to 55vw width for Desktop to balance layout */}
-      <div className="h-[40vh] md:h-screen w-full md:w-[55vw] fixed top-0 md:right-0 z-0 bg-desert-umber">
+      <div className="h-[40vh] md:h-screen w-full md:w-[50vw] fixed top-0 md:right-0 z-0 bg-desert-umber">
         <MapViewer 
           center={mapData.center} 
           zoom={mapData.zoom} 
@@ -112,8 +153,7 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
       </div>
 
       {/* Mobile Text (Bottom Scroll) / Desktop Text (Left Scroll) */}
-      {/* Restored to 45vw width for comfortable reading space */}
-      <div className="w-full md:w-[45vw] h-full z-10 mt-[40vh] md:mt-0 md:bg-deep-obsidian/95 backdrop-blur-sm overflow-y-auto overflow-x-hidden scroll-smooth relative pointer-events-auto shadow-2xl">
+      <div className="w-full md:w-[50vw] h-full z-10 mt-[40vh] md:mt-0 md:bg-deep-obsidian/95 backdrop-blur-sm overflow-y-auto overflow-x-hidden scroll-smooth relative pointer-events-auto shadow-2xl">
         
         {/* Header / Intro Spacer */}
         <div className="min-h-screen flex flex-col items-center justify-center p-8 text-center relative border-b border-white/5">
@@ -140,7 +180,7 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
           </div>
         </div>
 
-        <div className="pb-32 px-4 md:px-8">
+        <div className="pb-48 px-4 md:px-8">
           {events.map((event) => (
             <NarrativeCard 
               key={event.id} 
@@ -151,10 +191,44 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
               onOpenModal={() => setModalEvent(event)}
             />
           ))}
+
+          {/* Gamifikasi Kuis Sirah */}
+          <QuizSection language={language} />
         </div>
       </div>
 
-      <LanguageToggle language={language} onChange={setLanguage} />
+      {/* Interactive Timeline (Bottom Floating) */}
+      <div className="fixed bottom-6 right-[25vw] translate-x-1/2 z-50 hidden md:flex flex-wrap justify-center items-center gap-1.5 p-3 bg-deep-obsidian/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl max-w-[45vw]">
+        {events.map((event, index) => {
+          const isActive = activeEvent?.id === event.id;
+          const isPassed = activeEvent ? events.findIndex(e => e.id === activeEvent.id) >= index : false;
+          
+          return (
+            <button
+              key={event.id}
+              onClick={() => scrollToEvent(event.id)}
+              className="group relative flex flex-col items-center justify-center transition-all px-1"
+            >
+              {/* Tooltip */}
+              <div className="absolute bottom-full mb-3 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap bg-deep-obsidian border border-sand-gold/30 shadow-xl text-white text-xs py-2 px-3 rounded-xl pointer-events-none flex flex-col items-center gap-1 z-[100]">
+                <span className="text-sand-gold font-bold uppercase tracking-widest text-[10px]">{event.order < 10 ? `Bab 0${event.order}` : `Bab ${event.order}`}</span>
+                <span className="text-gray-200 font-medium">{event.title[language] || event.title['id']}</span>
+              </div>
+              
+              {/* Dot */}
+              <div 
+                className={`h-2 transition-all duration-300 rounded-full ${
+                  isActive 
+                    ? "w-8 bg-sand-gold shadow-[0_0_10px_rgba(217,119,6,0.8)]" 
+                    : isPassed 
+                      ? "w-2 bg-desert-umber" 
+                      : "w-2 bg-white/20 hover:bg-white/50"
+                }`}
+              />
+            </button>
+          );
+        })}
+      </div>
       
       {/* Deep Dive Modal Overlay */}
       <DeepDiveModal 

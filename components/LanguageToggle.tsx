@@ -9,7 +9,7 @@ interface LanguageToggleProps {
 
 export default function LanguageToggle({ language, onChange }: LanguageToggleProps) {
   return (
-    <div className="fixed top-4 right-4 z-50 bg-parchment-sand rounded-full p-1 border border-desert-umber/30 shadow-lg flex items-center backdrop-blur-md">
+    <div className="bg-parchment-sand rounded-full p-1 border border-desert-umber/30 shadow-sm flex items-center justify-center">
       <button
         onClick={() => onChange("id")}
         className={`px-3 py-1.5 rounded-full text-xs font-bold transition-colors ${
