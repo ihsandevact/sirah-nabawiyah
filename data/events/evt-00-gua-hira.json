@@ -31,5 +31,19 @@
       "description": "Nabi memisahkan diri dari hiruk-pikuk kesesatan Makkah untuk mencari kebenaran, menunjukkan bahwa kejelasan pikiran didapat dari keheningan.",
       "practicalAction": "Luangkan waktu secara rutin (seperti iktikaf atau sejenak merenung) menjauh dari media sosial untuk menenangkan hati dan pikiran."
     }
-  ]
+  ],
+  "detailedContent": {
+    "id": "Menjelang usia 40 tahun, Nabi Muhammad ﷺ merasakan ketidaknyamanan yang mendalam melihat kerusakan moral masyarakat Jahiliyah. Beliau memilih untuk mengasingkan diri (Tahannuth) di Gua Hira, Jabal Nur, berbekal roti gandum dan air.\n\nPada bulan Ramadhan, Malaikat Jibril datang dalam wujud aslinya yang memenuhi ufuk, mendekap Nabi dengan sangat kuat hingga beliau kesulitan bernapas, dan memerintahkan: 'Iqra!' (Bacalah!). Peristiwa ini menurunkan 5 ayat pertama Surah Al-'Alaq.\n\nNabi pulang dalam keadaan gemetar dan meminta Khadijah menyelimutinya ('Zammiluni!'). Khadijah menenangkan beliau dan membawanya ke Waraqah bin Naufal, seorang pendeta Nasrani yang menguasai kitab Ibrani. Waraqah mengonfirmasi bahwa yang datang adalah Namus (Jibril) yang pernah datang kepada Musa, dan menyatakan bahwa kaumnya akan mengusir beliau suatu hari nanti.",
+    "en": "Approaching the age of 40, Prophet Muhammad ﷺ felt deep unease witnessing the moral decay of Jahiliyyah society. He chose to seclude himself (Tahannuth) in the Cave of Hira on Jabal Nur, bringing barley bread and water.\n\nDuring Ramadan, Angel Jibril appeared in his true form, embracing the Prophet tightly until he could barely breathe, commanding: 'Iqra!' (Read!). This event brought down the first 5 verses of Surah Al-'Alaq.\n\nThe Prophet returned trembling, asking Khadijah to cover him ('Zammiluni!'). She comforted him and took him to Waraqah bin Naufal, a Christian scholar versed in Hebrew scriptures. Waraqah confirmed that the entity was the Namus (Jibril) who visited Moses, warning that his own people would eventually drive him out.",
+    "ar": "عندما قارب الأربعين، شعر النبي ﷺ بضيق من الفساد الأخلاقي في الجاهلية. فاختار العزلة (التحنث) في غار حراء.\n\nفي رمضان، جاءه جبريل وضمه بشدة قائلاً: 'اقرأ!'. فنزل أول خمس آيات من سورة العلق.\n\nعاد النبي يرتجف طالباً من خديجة زملوني. فطمأنته وأخذته إلى ورقة بن نوفل، العالم بالكتاب العبري، الذي أكد أن هذا هو الناموس الذي نزل على موسى، وأخبره بأن قومه سيخرجونه."
+  },
+  "quranicContext": {
+    "surahName": "Al-'Alaq",
+    "ayahRange": "1-5",
+    "arabicText": "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ * خَلَقَ الْإِنْسَانَ مِنْ عَلَقٍ * اقْرَأْ وَرَبُّكَ الْأَكْرَمُ * الَّذِي عَلَّمَ بِالْقَلَمِ * عَلَّمَ الْإِنْسَانَ مَا لَمْ يَعْلَمْ",
+    "translation": {
+      "id": "Bacalah dengan (menyebut) nama Tuhanmu Yang menciptakan. Dia telah menciptakan manusia dari segumpal darah. Bacalah, dan Tuhanmulah Yang Maha Pemurah. Yang mengajar (manusia) dengan perantaran kalam. Dia mengajar kepada manusia apa yang tidak diketahuinya.",
+      "en": "Recite in the name of your Lord who created. Created man from a clinging substance. Recite, and your Lord is the most Generous. Who taught by the pen. Taught man that which he knew not."
+    }
+  }
 }

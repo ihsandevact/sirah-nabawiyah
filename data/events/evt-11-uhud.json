@@ -36,7 +36,10 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [39.6105, 24.5015]
+          "coordinates": [
+            39.6105,
+            24.5015
+          ]
         }
       },
       {
@@ -106,5 +109,10 @@
       "description": "Satu pelanggaran instruksi oleh pasukan pemanah mengorbankan nyawa 70 sahabat terbaik, termasuk Hamzah bin Abdul Muthalib.",
       "practicalAction": "Patuhi kesepakatan dan instruksi pimpinan selama itu bukan maksiat, meski kita menganggapnya sudah tidak relevan."
     }
-  ]
+  ],
+  "detailedContent": {
+    "id": "Setahun setelah Badar, Quraisy yang mendidih oleh dendam membawa 3.000 prajurit untuk menyerang Madinah (3 H). Pasukan Muslim berjumlah 700 orang. Nabi ﷺ menempatkan 50 pemanah elit di Bukit Rumat di bawah komando Abdullah bin Jubair, dengan instruksi mutlak: 'Jangan tinggalkan pos kalian, walau kalian melihat kami disambar burung!'\n\nDi awal pertempuran, Singa Allah, Hamzah bin Abdul Muthalib, mengobrak-abrik barisan musuh hingga Quraisy kocar-kacir melarikan diri. Melihat musuh kabur dan meninggalkan harta rampasan (ghanimah), 40 dari 50 pemanah lupa pada instruksi pimpinan dan turun dari bukit.\n\nKhalid bin Walid (komandan kavaleri Quraisy yang saat itu belum masuk Islam) melihat bukit kosong. Ia segera memutar pasukan kudanya dari belakang, membantai sisa pemanah, dan menyerang kaum Muslimin dari dua arah. Kekacauan luar biasa terjadi, Hamzah syahid ditombak Wahsyi, dan Rasulullah ﷺ terluka parah hingga giginya patah. Beberapa sahabat seperti Abu Dujanah dan Ummu Umarah menjadikan tubuh mereka perisai hidup untuk melindungi Nabi dari hujan panah musuh.",
+    "en": "A year after Badr, a vengeful Quraysh marched with 3,000 soldiers to attack Madinah (3 AH). The Muslim force numbered 700. The Prophet ﷺ placed 50 elite archers on Mount Rumat under Abdullah bin Jubayr with strict orders: 'Do not leave your post, even if you see birds snatching us!'\n\nInitially, the Lion of Allah, Hamzah, shattered the enemy ranks, causing Quraysh to flee in panic. Seeing the enemy retreat and leave behind war booty (ghanimah), 40 archers disobeyed orders and abandoned the hill.\n\nKhalid bin Walid (then a Quraysh cavalry commander) saw the exposed flank. He flanked the Muslims from behind, slaughtering the remaining archers. Total chaos ensued, Hamzah was martyred by Wahshi's spear, and the Prophet ﷺ was severely wounded, losing a tooth. Companions like Abu Dujanah and Umm Umarah used their bodies as human shields to protect him from a hail of arrows.",
+    "ar": "بعد عام من بدر، جاءت قريش بـ 3000 مقاتل للانتقام. كان المسلمون 700. وضع النبي ﷺ 50 رامياً على جبل الرماة بأمر حازم: 'لا تبرحوا مكانكم وإن رأيتم الطير تتخطفنا!'.\n\nفي البداية، مزق حمزة صفوف العدو وفرت قريش. فلما رأى الرماة الغنائم، خالف 40 منهم الأمر ونزلوا.\n\nاستغل خالد بن الوليد (قائد فرسان قريش) الفرصة والتف من الخلف. عمت الفوضى، واستشهد حمزة، وأصيب النبي ﷺ وكسرت رباعيته. وجعل صحابة كأبي دجانة وأم عمارة أجسادهم دروعاً بشرية لحمايته."
+  }
 }

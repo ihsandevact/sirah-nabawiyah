@@ -36,7 +36,10 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [39.882194, 21.415194]
+          "coordinates": [
+            39.882194,
+            21.415194
+          ]
         }
       }
     ]
@@ -54,5 +57,11 @@
       "description": "Penduduk Yatsrib diingatkan oleh Al-'Abbas bin 'Ubadah bahwa membaiat Nabi ﷺ berarti siap dimusuhi oleh seluruh bangsa Arab dan dunia.",
       "practicalAction": "Keteguhan prinsip membutuhkan kesiapan menanggung risiko dan tidak mudah goyah oleh tekanan lingkungan."
     }
-  ]
+  ],
+  "detailedContent": {
+    "id": "Tujuh puluh tiga pria dan dua wanita dari Yatsrib datang secara diam-diam di pertengahan hari-hari tasyriq untuk membaiat Nabi Muhammad ﷺ. Mereka berjanji untuk melindungi beliau sebagaimana melindungi keluarga mereka sendiri, yang menjadi fondasi berdirinya negara Islam pertama di Madinah.\n\nSecara historis, peristiwa ini membawa dampak signifikan bagi perkembangan dakwah Islam. Para ahli sejarah sepakat bahwa hikmah dari kejadian ini menjadi pondasi pergerakan umat di masa selanjutnya. [Artikel mendetail untuk bab ini sedang dalam tahap penyusunan oleh tim editor kami bersumber dari Ar-Rahiq Al-Makhtum].",
+    "en": "Seventy-three men and two women from Yathrib secretly met and pledged allegiance to Prophet Muhammad ﷺ during the days of Tashriq. They promised to protect him as they would their own families, laying the foundation for the first Islamic state in Madinah.\n\nHistorically, this event brought a significant impact on the development of Islamic proselytization. Historians agree that the wisdom behind this occurrence became a foundation for the Ummah's future movements. [Detailed article for this chapter is currently being drafted by our editorial team based on Ar-Rahiq Al-Makhtum].",
+    "ar": "اجتمع ثلاثة وسبعون رجلاً وامرأتان من يثرب سراً في أواسط أيام التشريق لمبايعة النبي محمد ﷺ. وتعاهدوا على حمايته كما يحمون أهليهم، مما أسس لقيام أول دولة إسلامية في المدينة المنورة.\n\nتاريخياً، أحدث هذا الحدث تأثيراً كبيراً في تطور الدعوة. [المقال التفصيلي لهذا الباب قيد الإعداد بناءً على الرحيق المختوم]."
+  },
+  "distanceMetric": "Jarak Udara Yatsrib - Makkah: ~340 km"
 }

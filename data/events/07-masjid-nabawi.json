@@ -36,7 +36,10 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [39.6111, 24.4672]
+          "coordinates": [
+            39.6111,
+            24.4672
+          ]
         }
       }
     ]
@@ -54,5 +57,10 @@
       "description": "Tanah yatim tersebut ditawarkan sebagai hibah, namun Rasulullah ﷺ menolak menerimanya secara cuma-cuma dan bersikeras membelinya dengan harga yang pantas (dibayarkan oleh Abu Bakar).",
       "practicalAction": "Hargai jerih payah dan properti orang lain, terlebih kelompok yang lemah (yatim), hindari aji mumpung demi kepentingan publik."
     }
-  ]
+  ],
+  "detailedContent": {
+    "id": "Masjid Nabawi dibangun di atas tanah milik dua anak yatim (Sahl dan Suhail) yang telah dibeli secara sah. Nabi ﷺ ikut serta memanggul batu bata dan bernyanyi bersama para sahabat, memupuk semangat gotong royong.\n\nSecara historis, peristiwa ini membawa dampak signifikan bagi perkembangan dakwah Islam. Para ahli sejarah sepakat bahwa hikmah dari kejadian ini menjadi pondasi pergerakan umat di masa selanjutnya. [Artikel mendetail untuk bab ini sedang dalam tahap penyusunan oleh tim editor kami bersumber dari Ar-Rahiq Al-Makhtum].",
+    "en": "The Prophet's Mosque was built on land owned by two orphans (Sahl and Suhail), which was lawfully purchased. The Prophet ﷺ himself participated in carrying bricks, fostering a spirit of mutual cooperation.\n\nHistorically, this event brought a significant impact on the development of Islamic proselytization. Historians agree that the wisdom behind this occurrence became a foundation for the Ummah's future movements. [Detailed article for this chapter is currently being drafted by our editorial team based on Ar-Rahiq Al-Makhtum].",
+    "ar": "بني المسجد النبوي على أرض يمتلكها غلامان يتيمان (سهل وسهيل) تم شراؤها بشكل شرعي. شارك النبي ﷺ بنفسه في حمل اللبن (الطوب) منشداً مع الصحابة، لتعزيز روح العمل الجماعي.\n\nتاريخياً، أحدث هذا الحدث تأثيراً كبيراً في تطور الدعوة. [المقال التفصيلي لهذا الباب قيد الإعداد بناءً على الرحيق المختوم]."
+  }
 }

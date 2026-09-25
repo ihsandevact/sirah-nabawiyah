@@ -16,7 +16,10 @@
     "chapter": "Perang Badar Kubra"
   },
   "mapData": {
-    "center": [38.7844, 23.7344],
+    "center": [
+      38.7844,
+      23.7344
+    ],
     "zoom": 15,
     "pitch": 60,
     "bearing": -30
@@ -32,7 +35,30 @@
         },
         "geometry": {
           "type": "Polygon",
-          "coordinates": [[[38.783, 23.732], [38.785, 23.732], [38.785, 23.733], [38.783, 23.733], [38.783, 23.732]]]
+          "coordinates": [
+            [
+              [
+                38.783,
+                23.732
+              ],
+              [
+                38.785,
+                23.732
+              ],
+              [
+                38.785,
+                23.733
+              ],
+              [
+                38.783,
+                23.733
+              ],
+              [
+                38.783,
+                23.732
+              ]
+            ]
+          ]
         }
       },
       {
@@ -43,7 +69,30 @@
         },
         "geometry": {
           "type": "Polygon",
-          "coordinates": [[[38.782, 23.736], [38.786, 23.736], [38.786, 23.738], [38.782, 23.738], [38.782, 23.736]]]
+          "coordinates": [
+            [
+              [
+                38.782,
+                23.736
+              ],
+              [
+                38.786,
+                23.736
+              ],
+              [
+                38.786,
+                23.738
+              ],
+              [
+                38.782,
+                23.738
+              ],
+              [
+                38.782,
+                23.736
+              ]
+            ]
+          ]
         }
       },
       {
@@ -55,7 +104,10 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [38.784, 23.7335]
+          "coordinates": [
+            38.784,
+            23.7335
+          ]
         }
       },
       {
@@ -66,7 +118,16 @@
         },
         "geometry": {
           "type": "LineString",
-          "coordinates": [[38.784, 23.736], [38.784, 23.734]]
+          "coordinates": [
+            [
+              38.784,
+              23.736
+            ],
+            [
+              38.784,
+              23.734
+            ]
+          ]
         }
       }
     ]
@@ -84,5 +145,19 @@
       "description": "Pasukan Muslim dengan jumlah dan peralatan 1/3 dari musuh mampu menang telak berkat kedisiplinan, motivasi tinggi (akidah), dan kejelasan visi.",
       "practicalAction": "Jangan pernah mundur dari kompetisi atau proyek berat hanya karena merasa kekurangan modal/jumlah orang. Fokus pada kedisiplinan dan mental juara."
     }
-  ]
+  ],
+  "detailedContent": {
+    "id": "Perang Badar Al-Kubra (17 Ramadhan 2 H) adalah titik balik paling menentukan dalam sejarah Islam (Yaumul Furqan). Pasukan Muslim yang hanya berjumlah 313 orang dengan persenjataan seadanya harus berhadapan dengan 1.000 prajurit elit Quraisy bersenjata lengkap.\n\nSebelum perang, Al-Hubab bin Al-Mundzir memberikan saran strategis kemiliteran (bukan wahyu) agar pasukan Muslim memonopoli sumber air (Sumur Badar) dan menimbun sumur lainnya agar musuh kehausan. Nabi ﷺ dengan rendah hati menerima taktik prajuritnya tersebut. Malam harinya, Nabi berdoa di tenda komando (Al-Arisy) dengan penuh isak tangis hingga sorbannya terjatuh: 'Ya Allah, jika kelompok kecil ini binasa hari ini, Engkau tidak akan disembah lagi di muka bumi.'\n\nPerang diawali dengan duel (mubarazah) di mana Ali, Hamzah, dan Ubaidah berhasil menumbangkan jagoan Quraisy (Utbah, Syaibah, Walid). Allah kemudian mengabulkan doa Nabi dengan menurunkan 1.000 Malaikat (Surah Al-Anfal). Pasukan musyrik hancur lebur, 70 tokoh elit mereka tewas (termasuk Abu Jahal), dan 70 lainnya ditawan. Momen ini meruntuhkan hegemoni Quraisy selamanya.",
+    "en": "The Battle of Badr (17 Ramadan 2 AH) was the most decisive turning point in Islamic history (Yawm al-Furqan). A poorly equipped Muslim force of just 313 faced 1,000 heavily armed Quraysh elites.\n\nBefore the battle, Al-Hubab bin Al-Mundhir offered a strategic military suggestion to monopolize the Badr wells and block the others to deprive the enemy of water. The Prophet ﷺ humbly accepted his soldier's tactic. That night, the Prophet prayed in his command tent (Al-Arish) so intensely that his cloak fell from his shoulders: 'O Allah, if this small band perishes today, You will never be worshipped on earth again.'\n\nThe battle began with a traditional duel where Ali, Hamzah, and Ubaydah defeated the Quraysh champions. Allah answered the Prophet's prayer by sending 1,000 angels (Surah Al-Anfal). The polytheists were crushed; 70 elite leaders (including Abu Jahl) were killed, and 70 captured. This event shattered Quraysh hegemony forever.",
+    "ar": "غزوة بدر الكبرى (17 رمضان 2 هـ) هي نقطة التحول الحاسمة (يوم الفرقان). واجه 313 مسلماً بأسلحة بسيطة جيشاً من 1000 مقاتل قرشي مدجج بالسلاح.\n\nأشار الحباب بن المنذر بتكتيك عسكري للسيطرة على آبار بدر، وقبله النبي ﷺ. وفي الليل، دعا النبي في العريش بدموع حتى سقط رداؤه: 'اللهم إن تهلك هذه العصابة لا تُعبد في الأرض'.\n\nبدأت المعركة بمبارزة انتصر فيها علي وحمزة وعبيدة على فرسان قريش. وأنزل الله 1000 ملك استجابة للدعاء. سُحقت قريش وقُتل 70 من ساداتهم (بينهم أبو جهل)، وتحطمت هيمنتهم للأبد."
+  },
+  "quranicContext": {
+    "surahName": "Al-Anfal",
+    "ayahRange": "1-4",
+    "arabicText": "يَسْأَلُونَكَ عَنِ الْأَنْفَالِ ۖ قُلِ الْأَنْفَالُ لِلَّهِ وَالرَّسُولِ ۖ فَاتَّقُوا اللَّهَ وَأَصْلِحُوا ذَاتَ بَيْنِكُمْ ۖ وَأَطِيعُوا اللَّهَ وَرَسُولَهُ إِنْ كُنْتُمْ مُؤْمِنِينَ",
+    "translation": {
+      "id": "Mereka menanyakan kepadamu tentang (pembagian) harta rampasan perang. Katakanlah: 'Harta rampasan perang mempuyai Allah dan Rasul, oleh sebab itu bertakwalah kepada Allah dan perbaikilah perhubungan di antara sesamamu...'",
+      "en": "They ask you, [O Muhammad], about the bounties [of war]. Say, 'The [decision concerning] bounties is for Allah and the Messenger.' So fear Allah and amend that which is between you..."
+    }
+  }
 }

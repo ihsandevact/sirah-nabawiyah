@@ -64,7 +64,10 @@
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [39.600, 24.486]
+          "coordinates": [
+            39.6,
+            24.486
+          ]
         }
       }
     ]
@@ -76,5 +79,10 @@
       "description": "Nabi ﷺ tidak segan menerima taktik Persia dari Salman. Hikmah (kebijaksanaan) adalah barang hilangnya umat Islam, di mana pun ia berada, kita berhak mengambilnya.",
       "practicalAction": "Bersikap terbuka terhadap teknologi dan ilmu manajemen modern dari bangsa mana pun selama membawa manfaat."
     }
-  ]
+  ],
+  "detailedContent": {
+    "id": "Perang Khandaq (Perang Ahzab) pada 5 H merupakan invasi militer terbesar di Jazirah Arab saat itu. Konfederasi 10.000 pasukan musyrik dan Yahudi mengepung Madinah untuk menghancurkan Islam ke akarnya.\n\nDalam situasi krisis militer, Salman Al-Farisi, seorang sahabat asal Persia, mengusulkan taktik yang sama sekali asing bagi bangsa Arab: menggali parit raksasa (Khandaq) di batas utara Madinah yang terbuka. Nabi ﷺ beserta para sahabat bekerja keras siang dan malam memecahkan batu dan menggali tanah di tengah kelaparan dan cuaca dingin yang menggigit.\n\nParit itu berhasil memblokir kavaleri Quraisy selama hampir sebulan. Namun, pengkhianatan dari dalam oleh Yahudi Bani Quraizhah hampir membuat Muslim hancur. Atas doa Rasulullah, Allah mengirimkan angin topan yang luar biasa dingin, menerbangkan kemah-kemah Ahzab, memadamkan api mereka, dan menanamkan rasa gentar. Pasukan koalisi akhirnya mundur tanpa pertempuran berarti. Inilah akhir dari upaya ofensif Quraisy terhadap Madinah.",
+    "en": "The Battle of Khandaq (The Confederates) in 5 AH was the largest military invasion in Arabia at the time. A coalition of 10,000 pagans and Jews besieged Madinah to obliterate Islam entirely.\n\nIn this military crisis, Salman the Persian suggested a tactic entirely foreign to Arabs: digging a massive trench (Khandaq) across the exposed northern border. The Prophet ﷺ and companions worked tirelessly in freezing, starving conditions to break rocks and dig.\n\nThe trench successfully blocked the Quraysh cavalry for nearly a month. However, internal treason by the Jewish Banu Qurayza almost destroyed the Muslims. Following the Prophet's prayer, Allah sent a freezing, ferocious hurricane that uprooted the enemy's tents and struck terror in their hearts. The coalition retreated without a major battle. This marked the end of Quraysh offensive campaigns.",
+    "ar": "كانت غزوة الخندق (5 هـ) أكبر غزو عسكري في الجزيرة العربية حينها، حيث حاصر 10,000 من الأحزاب المدينة لاستئصال الإسلام.\n\nاقترح سلمان الفارسي تكتيكاً غريباً على العرب: حفر خندق ضخم في شمال المدينة. عمل النبي ﷺ والصحابة في الحفر رغم الجوع والبرد.\n\nمنع الخندق فرسان قريش لقرابة شهر. كادت خيانة يهود بني قريظة أن تدمر المسلمين، لكن بفضل دعاء النبي، أرسل الله ريحاً صرصراً عاتية اقتلعت خيام الأحزاب، فانسحبوا خائبين."
+  }
 }
