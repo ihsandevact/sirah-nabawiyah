@@ -1,0 +1,102 @@
+[
+  {
+    "id": "char-abu-bakar",
+    "names": ["Abu Bakar", "Abu Bakr", "أبو بكر"],
+    "status": "Sahabat (Khulafaur Rasyidin)",
+    "bio": {
+      "id": "Sahabat terdekat Rasulullah ﷺ dan khalifah pertama. Selalu membenarkan perkataan Nabi tanpa ragu, sehingga digelari As-Siddiq.",
+      "en": "The closest companion of the Prophet ﷺ and the first Caliph. He always believed the Prophet without hesitation, earning the title As-Siddiq.",
+      "ar": "أقرب صحابة رسول الله ﷺ والخليفة الأول. صدقه بلا تردد فلقب بالصديق."
+    }
+  },
+  {
+    "id": "char-umar",
+    "names": ["Umar bin Khattab", "Umar", "عمر بن الخطاب"],
+    "status": "Sahabat (Khulafaur Rasyidin)",
+    "bio": {
+      "id": "Sahabat berwatak keras yang masuk Islam setelah mendengar adiknya membaca Al-Qur'an. Digelari Al-Faruq (Pemisah kebenaran dan kebatilan).",
+      "en": "A fierce companion who embraced Islam after hearing his sister recite the Quran. Titled Al-Faruq (The Distinguisher of truth and falsehood).",
+      "ar": "صحابي شديد البأس أسلم بعد سماع أخته تقرأ القرآن. لقب بالفاروق."
+    }
+  },
+  {
+    "id": "char-hamzah",
+    "names": ["Hamzah", "Hamzah bin Abdul Muthalib", "حمزة"],
+    "status": "Sahabat (Syuhada Uhud)",
+    "bio": {
+      "id": "Paman sekaligus saudara sepersusuan Nabi. Pendekar terhebat Quraisy. Digelari Asadullah (Singa Allah). Syahid di Perang Uhud.",
+      "en": "Uncle and milk-brother of the Prophet. The greatest warrior of Quraysh. Titled Asadullah (Lion of Allah). Martyred at Uhud.",
+      "ar": "عم النبي وأخوه في الرضاعة. أعظم فرسان قريش. لقب بأسد الله. استشهد في أحد."
+    }
+  },
+  {
+    "id": "char-khalid",
+    "names": ["Khalid bin Walid", "Khalid", "خالد بن الوليد"],
+    "status": "Sahabat (Panglima Perang)",
+    "bio": {
+      "id": "Awalnya komandan kavaleri musyrik yang mengalahkan Muslim di Uhud. Setelah masuk Islam, ia digelari Saifullah Al-Maslul (Pedang Allah yang Terhunus).",
+      "en": "Initially the pagan cavalry commander who defeated Muslims at Uhud. After embracing Islam, titled Saifullah (The Drawn Sword of Allah).",
+      "ar": "قائد فرسان المشركين في أحد، أسلم لاحقاً ولقب بسيف الله المسلول."
+    }
+  },
+  {
+    "id": "char-abu-jahal",
+    "names": ["Abu Jahal", "Amr bin Hisyam", "أبو جهل"],
+    "status": "Musyrik (Musuh Utama Islam)",
+    "bio": {
+      "id": "Pemimpin Quraisy yang sangat benci Islam. Nama aslinya Abul Hakam, namun Nabi menggelarinya Abu Jahal (Bapak Kebodohan). Tewas di Perang Badar.",
+      "en": "Quraysh leader who deeply hated Islam. Originally Abul Hakam, the Prophet called him Abu Jahl (Father of Ignorance). Killed at Badr.",
+      "ar": "زعيم قرشي شديد العداء للإسلام. قُتل في غزوة بدر."
+    }
+  },
+  {
+    "id": "char-abu-sufyan",
+    "names": ["Abu Sufyan", "Abu Sufyan bin Harb", "أبو سفيان"],
+    "status": "Sahabat (Mualaf Fathu Makkah)",
+    "bio": {
+      "id": "Pemimpin tertinggi militer Makkah pasca Badar. Akhirnya memeluk Islam menjelang Fathu Makkah (Penaklukan Makkah).",
+      "en": "The supreme military commander of Makkah after Badr. Finally embraced Islam right before the Conquest of Makkah.",
+      "ar": "القائد العسكري لمكة بعد بدر. أسلم قبل فتح مكة."
+    }
+  },
+  {
+    "id": "char-aisyah",
+    "names": ["Aisyah", "Aisha", "عائشة"],
+    "status": "Ummul Mukminin (Istri Nabi)",
+    "bio": {
+      "id": "Putri Abu Bakar. Istri Nabi yang paling cerdas dan periwayat ribuan hadits. Nabi ﷺ wafat di pangkuannya.",
+      "en": "Daughter of Abu Bakr. The most brilliant wife of the Prophet and narrator of thousands of hadiths. The Prophet ﷺ passed away in her lap.",
+      "ar": "بنت أبي بكر. أذكى زوجات النبي وراوية آلاف الأحاديث. توفي النبي ﷺ في حجرها."
+    }
+  },
+  {
+    "id": "char-khadijah",
+    "names": ["Khadijah", "Khadijah binti Khuwailid", "خديجة"],
+    "status": "Ummul Mukminin (Istri Pertama Nabi)",
+    "bio": {
+      "id": "Istri pertama Rasulullah ﷺ. Mengorbankan seluruh hartanya untuk dakwah awal Islam dan menjadi pendukung emosional utama Nabi.",
+      "en": "The Prophet's first wife. She sacrificed all her wealth for early Islam and was his main emotional support.",
+      "ar": "زوجة النبي الأولى. ضحت بكل مالها من أجل الإسلام وكانت سنده العاطفي."
+    }
+  },
+  {
+    "id": "char-waraqah",
+    "names": ["Waraqah bin Naufal", "Waraqah", "ورقة بن نوفل"],
+    "status": "Ahli Kitab (Muwaḥḥid)",
+    "bio": {
+      "id": "Sepupu Khadijah. Seorang pendeta Nasrani yang mengesakan Allah dan menguasai Injil berbahasa Ibrani. Orang pertama yang meyakini kenabian Muhammad ﷺ.",
+      "en": "Khadijah's cousin. A Christian priest who mastered Hebrew scriptures. The first to believe in Muhammad's prophethood.",
+      "ar": "ابن عم خديجة. عالم نصراني موحد. أول من صدق بنبوة محمد ﷺ."
+    }
+  },
+  {
+    "id": "char-ali",
+    "names": ["Ali bin Abi Thalib", "Ali", "علي بن أبي طالب"],
+    "status": "Sahabat (Khulafaur Rasyidin)",
+    "bio": {
+      "id": "Sepupu sekaligus menantu Nabi (suami Fatimah). Pemuda pertama yang masuk Islam. Dikenal karena keberaniannya di medan perang dan kedalaman ilmunya.",
+      "en": "Cousin and son-in-law of the Prophet (husband of Fatimah). The first youth to embrace Islam. Known for his bravery in battle and deep knowledge.",
+      "ar": "ابن عم النبي وزوج فاطمة. أول من أسلم من الصبيان. عُرف بشجاعته وعلمه."
+    }
+  }
+]

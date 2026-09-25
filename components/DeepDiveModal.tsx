@@ -2,6 +2,7 @@ import React from "react";
 import { SirahEvent } from "@/types/sirah";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, BookOpen, Quote } from "lucide-react";
+import RichTextParser from "./RichTextParser";
 
 interface DeepDiveModalProps {
   event: SirahEvent | null;
@@ -36,10 +37,10 @@ export default function DeepDiveModal({ event, language, onClose }: DeepDiveModa
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-4xl max-h-[90vh] bg-deep-obsidian border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="relative w-full max-w-4xl max-h-[90vh] bg-deep-obsidian border border-white/10 rounded-2xl shadow-2xl flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-white/10 bg-black/20">
+            <div className="flex items-center justify-between p-6 border-b border-white/10 bg-black/20 rounded-t-2xl">
               <div className="flex items-center gap-3 text-sand-gold">
                 <BookOpen className="w-6 h-6" />
                 <h2 className="text-xl font-bold font-arabic tracking-wide">
@@ -86,7 +87,9 @@ export default function DeepDiveModal({ event, language, onClose }: DeepDiveModa
               >
                 {/* Splitting newlines if they exist in the JSON text */}
                 {content?.split('\n').map((paragraph, idx) => (
-                  <p key={idx} className="mb-6">{paragraph}</p>
+                  <div key={idx} className="mb-6">
+                    <RichTextParser text={paragraph} language={language} />
+                  </div>
                 ))}
               </div>
             </div>

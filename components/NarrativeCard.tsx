@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { SirahEvent } from "@/types/sirah";
 import { BookOpen, Volume2, Square, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import RichTextParser from "./RichTextParser";
 
 interface NarrativeCardProps {
   event: SirahEvent;
@@ -131,9 +132,9 @@ export default function NarrativeCard({ event, language, isActive, onActive, onO
           {event.title[language] || event.title['id']}
         </h2>
         
-        <p className={`text-lg md:text-xl text-gray-300 mb-8 font-light ${isArabic ? 'leading-loose' : 'leading-relaxed'}`}>
-          {event.description[language] || event.description['id']}
-        </p>
+        <div className={`text-lg md:text-xl text-gray-300 mb-8 font-light ${isArabic ? 'leading-loose' : 'leading-relaxed'}`}>
+          <RichTextParser text={event.description[language] || event.description['id']} language={language} />
+        </div>
 
         <div className={`bg-deep-obsidian/60 rounded-xl p-5 border border-white/5 flex items-start gap-4 ${isArabic ? 'font-sans text-right flex-row-reverse' : ''}`}>
           <div className="bg-desert-umber/20 p-2 rounded-lg">
