@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    { "id": "qusayy", "name": "Qushay bin Kilab", "group": 1, "val": 20 },
+    
+    { "id": "abdmanaf", "name": "Abd Manaf", "group": 1, "val": 15 },
+    { "id": "abddar", "name": "Abd ad-Dar", "group": 1, "val": 10 },
+    
+    { "id": "hashim", "name": "Hasyim", "group": 2, "val": 15 },
+    { "id": "abdshams", "name": "Abd Syams", "group": 3, "val": 10 },
+    { "id": "muttalib", "name": "Muthalib", "group": 2, "val": 10 },
+    { "id": "nawfal", "name": "Nawfal", "group": 2, "val": 10 },
+    
+    { "id": "abdulmuttalib", "name": "Abdul Muthalib", "group": 2, "val": 15 },
+    
+    { "id": "umayya", "name": "Umayyah", "group": 3, "val": 10 },
+    
+    { "id": "abdullah", "name": "Abdullah", "group": 2, "val": 15 },
+    { "id": "abutaleb", "name": "Abu Thalib", "group": 2, "val": 10 },
+    { "id": "hamza", "name": "Hamzah", "group": 2, "val": 10 },
+    { "id": "abbas", "name": "Abbas", "group": 2, "val": 10 },
+    { "id": "abulahab", "name": "Abu Lahab", "group": 3, "val": 10 },
+    
+    { "id": "harb", "name": "Harb", "group": 3, "val": 10 },
+    
+    { "id": "muhammad", "name": "Muhammad ﷺ", "group": 4, "val": 25 },
+    { "id": "ali", "name": "Ali bin Abi Thalib", "group": 2, "val": 15 },
+    
+    { "id": "abusufyan", "name": "Abu Sufyan", "group": 3, "val": 10 }
+  ],
+  "links": [
+    { "source": "qusayy", "target": "abdmanaf" },
+    { "source": "qusayy", "target": "abddar" },
+    
+    { "source": "abdmanaf", "target": "hashim" },
+    { "source": "abdmanaf", "target": "abdshams" },
+    { "source": "abdmanaf", "target": "muttalib" },
+    { "source": "abdmanaf", "target": "nawfal" },
+    
+    { "source": "hashim", "target": "abdulmuttalib" },
+    { "source": "abdshams", "target": "umayya" },
+    
+    { "source": "abdulmuttalib", "target": "abdullah" },
+    { "source": "abdulmuttalib", "target": "abutaleb" },
+    { "source": "abdulmuttalib", "target": "hamza" },
+    { "source": "abdulmuttalib", "target": "abbas" },
+    { "source": "abdulmuttalib", "target": "abulahab" },
+    
+    { "source": "umayya", "target": "harb" },
+    
+    { "source": "abdullah", "target": "muhammad" },
+    { "source": "abutaleb", "target": "ali" },
+    
+    { "source": "harb", "target": "abusufyan" }
+  ]
+}
