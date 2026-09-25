@@ -78,73 +78,91 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
         type: "geojson",
         data: { type: "FeatureCollection", features: [] }
       });
-
-      map.current.addLayer({
-        id: "tactical-polygon",
-        type: "fill",
-        source: sourceId,
-        filter: ["==", ["geometry-type"], "Polygon"],
-        paint: {
-          "fill-color": ["get", "color"],
-          "fill-opacity": 0.4
-        }
-      });
-
-      map.current.addLayer({
-        id: "tactical-line",
-        type: "line",
-        source: sourceId,
-        filter: ["==", ["geometry-type"], "LineString"],
-        paint: {
-          "line-color": ["get", "color"],
-          "line-width": 4,
-          "line-dasharray": [2, 2]
-        }
-      });
-
-      map.current.addLayer({
-        id: "tactical-point",
-        type: "circle",
-        source: sourceId,
-        filter: ["all", ["==", ["geometry-type"], "Point"], ["!", ["has", "icon"]]],
-        paint: {
-          "circle-radius": 6,
-          "circle-color": ["get", "color"],
-          "circle-stroke-width": 2,
-          "circle-stroke-color": "#ffffff"
-        }
-      });
-      
-      map.current.addLayer({
-        id: "tactical-icon",
-        type: "symbol",
-        source: sourceId,
-        filter: ["all", ["==", ["geometry-type"], "Point"], ["has", "icon"]],
-        layout: {
-          "text-field": ["get", "icon"],
-          "text-size": 32,
-          "text-anchor": "bottom",
-          "text-allow-overlap": true
-        }
-      });
-
-      map.current.addLayer({
-        id: "tactical-label",
-        type: "symbol",
-        source: sourceId,
-        layout: {
-          "text-field": ["get", "label"],
-          "text-size": 14,
-          "text-anchor": "top",
-          "text-offset": [0, 0.5]
-        },
-        paint: {
-          "text-color": ["get", "color"],
-          "text-halo-color": "#ffffff",
-          "text-halo-width": 2
-        }
-      });
+      // (Layers are added inside a function below to re-add them when style changes)
     }
+
+    const addTacticalLayers = () => {
+      if (!map.current) return;
+      if (!map.current.getSource(sourceId)) return;
+
+      if (!map.current.getLayer("tactical-polygon")) {
+        map.current.addLayer({
+          id: "tactical-polygon",
+          type: "fill",
+          source: sourceId,
+          filter: ["==", ["geometry-type"], "Polygon"],
+          paint: {
+            "fill-color": ["get", "color"],
+            "fill-opacity": 0.4
+          }
+        });
+      }
+
+      if (!map.current.getLayer("tactical-line")) {
+        map.current.addLayer({
+          id: "tactical-line",
+          type: "line",
+          source: sourceId,
+          filter: ["==", ["geometry-type"], "LineString"],
+          paint: {
+            "line-color": ["get", "color"],
+            "line-width": 4,
+            "line-dasharray": [2, 2]
+          }
+        });
+      }
+
+      if (!map.current.getLayer("tactical-point")) {
+        map.current.addLayer({
+          id: "tactical-point",
+          type: "circle",
+          source: sourceId,
+          filter: ["all", ["==", ["geometry-type"], "Point"], ["!", ["has", "icon"]]],
+          paint: {
+            "circle-radius": 6,
+            "circle-color": ["get", "color"],
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#ffffff"
+          }
+        });
+      }
+      
+      if (!map.current.getLayer("tactical-icon")) {
+        map.current.addLayer({
+          id: "tactical-icon",
+          type: "symbol",
+          source: sourceId,
+          filter: ["all", ["==", ["geometry-type"], "Point"], ["has", "icon"]],
+          layout: {
+            "text-field": ["get", "icon"],
+            "text-size": 32,
+            "text-anchor": "bottom",
+            "text-allow-overlap": true
+          }
+        });
+      }
+
+      if (!map.current.getLayer("tactical-label")) {
+        map.current.addLayer({
+          id: "tactical-label",
+          type: "symbol",
+          source: sourceId,
+          layout: {
+            "text-field": ["get", "label"],
+            "text-size": 14,
+            "text-anchor": "top",
+            "text-offset": [0, 0.5]
+          },
+          paint: {
+            "text-color": ["get", "color"],
+            "text-halo-color": "#ffffff",
+            "text-halo-width": 2
+          }
+        });
+      }
+    };
+
+    addTacticalLayers();
 
     const src = map.current.getSource(sourceId) as maplibregl.GeoJSONSource;
     if (src) {
@@ -154,6 +172,12 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
         src.setData({ type: "FeatureCollection", features: [] });
       }
     }
+
+    // Handle style changes by re-adding layers once style loads
+    const onStyleData = () => {
+      addTacticalLayers();
+    };
+    map.current.on('styledata', onStyleData);
 
     // Animation Loop for Marching Ants effect on lines
     let animationId: number;
@@ -176,14 +200,53 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
 
     return () => {
       if (animationId) cancelAnimationFrame(animationId);
+      if (map.current) map.current.off('styledata', onStyleData);
     };
   }, [tacticalData, mapLoaded]);
+
+  const [isSatellite, setIsSatellite] = useState(false);
+  const toggleMapStyle = () => {
+    if (!map.current) return;
+    const newMode = !isSatellite;
+    setIsSatellite(newMode);
+    
+    if (newMode) {
+      // Free satellite layer via Esri
+      map.current.setStyle({
+        version: 8,
+        sources: {
+          'satellite': {
+            type: 'raster',
+            tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
+            tileSize: 256
+          }
+        },
+        layers: [{
+          id: 'satellite-layer',
+          type: 'raster',
+          source: 'satellite',
+          minzoom: 0,
+          maxzoom: 22
+        }]
+      });
+    } else {
+      map.current.setStyle("https://tiles.openfreemap.org/styles/liberty");
+    }
+  };
 
   return (
     <div className="relative w-full h-full" style={{ minHeight: '100%', minWidth: '100%' }}>
       <div ref={mapContainer} className="absolute inset-0 w-full h-full" />
       {/* Overlay to give a historical desert tint. Removed mix-blend-color for WebGL stability */}
-      <div className="absolute inset-0 pointer-events-none bg-desert-umber/10" />
+      {!isSatellite && <div className="absolute inset-0 pointer-events-none bg-desert-umber/10" />}
+      
+      {/* Satellite Toggle Button */}
+      <button 
+        onClick={toggleMapStyle}
+        className="absolute bottom-8 right-4 md:right-8 z-50 p-3 bg-deep-obsidian/80 backdrop-blur-md text-white rounded-xl shadow-lg border border-white/10 hover:bg-sand-gold transition-colors font-bold text-xs uppercase tracking-widest flex items-center gap-2"
+      >
+        {isSatellite ? "🗺️ Mode Vektor" : "🛰️ Mode Satelit"}
+      </button>
     </div>
   );
 }
