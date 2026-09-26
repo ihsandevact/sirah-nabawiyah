@@ -13,6 +13,12 @@ export default function QuizSection({ language }: QuizSectionProps) {
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
+  const [bestScore, setBestScore] = useState<number>(0);
+
+  React.useEffect(() => {
+    const saved = localStorage.getItem('sirah_quiz_best');
+    if (saved) setBestScore(parseInt(saved));
+  }, []);
 
   const isArabic = language === "ar";
   const question = quizData[currentQIndex];
@@ -34,6 +40,10 @@ export default function QuizSection({ language }: QuizSectionProps) {
       setIsAnswered(false);
     } else {
       setIsFinished(true);
+      if (score > bestScore) {
+        setBestScore(score);
+        localStorage.setItem('sirah_quiz_best', score.toString());
+      }
     }
   };
 
@@ -122,9 +132,14 @@ export default function QuizSection({ language }: QuizSectionProps) {
           >
             <Trophy className="w-20 h-20 text-sand-gold mx-auto mb-6" />
             <h2 className="text-4xl font-bold mb-4">{isArabic ? "اكتمل الاختبار!" : (language === "en" ? "Quiz Completed!" : "Kuis Selesai!")}</h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-gray-300 mb-2">
               {isArabic ? "نتيجتك:" : (language === "en" ? "Your Score:" : "Skor Anda:")} <strong className="text-sand-gold text-3xl">{score} / {quizData.length}</strong>
             </p>
+            {bestScore > 0 && (
+              <p className="text-sm text-gray-500 mb-8 uppercase tracking-widest font-bold">
+                {isArabic ? "أعلى نتيجة:" : (language === "en" ? "Best Score:" : "Skor Tertinggi:")} {Math.max(score, bestScore)}
+              </p>
+            )}
             <button
               onClick={resetQuiz}
               className="flex items-center justify-center gap-2 mx-auto px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl font-bold transition-colors"

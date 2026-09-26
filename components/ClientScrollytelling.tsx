@@ -7,7 +7,7 @@ import NarrativeCard from "./NarrativeCard";
 import LanguageToggle from "./LanguageToggle";
 import DeepDiveModal from "./DeepDiveModal";
 import QuizSection from "./QuizSection";
-import { Menu, X, Book, Search } from "lucide-react";
+import { Menu, X, Book, Search, Compass } from "lucide-react";
 
 const MapViewer = dynamic(() => import("./MapViewer"), {
   ssr: false,
@@ -24,6 +24,25 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [modalEvent, setModalEvent] = useState<SirahEvent | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [readEvents, setReadEvents] = useState<string[]>([]);
+
+  React.useEffect(() => {
+    const saved = localStorage.getItem('sirah_read_events');
+    if (saved) {
+      try { setReadEvents(JSON.parse(saved)); } catch (e) {}
+    }
+  }, []);
+
+  const handleEventActive = (event: SirahEvent) => {
+    setActiveEvent(event);
+    if (!readEvents.includes(event.id)) {
+      setReadEvents(prev => {
+        const next = [...prev, event.id];
+        localStorage.setItem('sirah_read_events', JSON.stringify(next));
+        return next;
+      });
+    }
+  };
 
   if (events.length === 0) {
     return <div className="p-8 text-center text-white">No data available.</div>;
@@ -57,7 +76,7 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
         className="fixed top-4 left-4 z-50 p-3 bg-deep-obsidian/80 backdrop-blur-md rounded-xl border border-white/10 text-white shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-deep-obsidian transition-all group flex items-center gap-3"
       >
         <Menu className="w-6 h-6 group-hover:text-sand-gold transition-colors" />
-        <span className="hidden md:inline font-bold text-sm tracking-wide text-gray-300 group-hover:text-white uppercase">Daftar Isi</span>
+        <span className="hidden md:inline font-bold text-sm tracking-wide text-gray-300 group-hover:text-white uppercase">Menu Utama</span>
       </button>
 
       {/* Off-canvas Sidebar Navigation (Overlay) */}
@@ -66,9 +85,9 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
         {/* Sidebar Header */}
         <div className="p-6 border-b border-white/10 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Book className="w-6 h-6 text-sand-gold" />
+            <Compass className="w-6 h-6 text-sand-gold" />
             <h2 className="text-lg font-bold text-white tracking-wide">
-              {isArabic ? "قائمة المحتويات" : (language === "en" ? "Table of Contents" : "Daftar Isi")}
+              {isArabic ? "القائمة الرئيسية" : (language === "en" ? "Main Menu" : "Menu Utama")}
             </h2>
           </div>
           <button onClick={() => setIsSidebarOpen(false)} className="text-gray-400 hover:text-white bg-white/5 p-2 rounded-lg">
@@ -114,10 +133,19 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
                   } ${isArabic ? "text-right font-arabic" : ""}`}
                   dir={isArabic ? "rtl" : "ltr"}
                 >
-                  <div className="text-xs uppercase tracking-widest opacity-60 mb-1">
-                    {isArabic ? "الباب" : "Bab"} {event.order < 10 ? `0${event.order}` : event.order}
+                  <div className="flex items-center justify-between gap-2">
+                    <div>
+                      <div className="text-xs uppercase tracking-widest opacity-60 mb-1">
+                        {isArabic ? "الباب" : "Bab"} {event.order < 10 ? `0${event.order}` : event.order}
+                      </div>
+                      <div className="leading-snug">{event.title[language] || event.title['id']}</div>
+                    </div>
+                    {readEvents.includes(event.id) && (
+                      <div className="flex-shrink-0 text-sand-gold text-lg bg-sand-gold/10 rounded-full w-6 h-6 flex items-center justify-center shadow-[0_0_10px_rgba(217,119,6,0.2)]" title={isArabic ? "مكتمل" : "Selesai dibaca"}>
+                        ✓
+                      </div>
+                    )}
                   </div>
-                  {event.title[language] || event.title['id']}
                 </a>
               );
             })
@@ -187,7 +215,7 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
               event={event} 
               language={language}
               isActive={activeEvent?.id === event.id}
-              onActive={setActiveEvent} 
+              onActive={handleEventActive} 
               onOpenModal={() => setModalEvent(event)}
             />
           ))}

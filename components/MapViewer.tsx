@@ -3,6 +3,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import * as maplibregl from "maplibre-gl";
 import { Coordinate } from "@/types/sirah";
+import along from "@turf/along";
+import length from "@turf/length";
+import { FeatureCollection, Feature, Point, LineString } from "geojson";
 
 interface MapViewerProps {
   center: Coordinate;
@@ -78,7 +81,10 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
         type: "geojson",
         data: { type: "FeatureCollection", features: [] }
       });
-      // (Layers are added inside a function below to re-add them when style changes)
+      map.current.addSource("tactical-animated-source", {
+        type: "geojson",
+        data: { type: "FeatureCollection", features: [] }
+      });
     }
 
     const addTacticalLayers = () => {
@@ -160,6 +166,21 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
           }
         });
       }
+
+      if (!map.current.getLayer("tactical-animated-point")) {
+        map.current.addLayer({
+          id: "tactical-animated-point",
+          type: "circle",
+          source: "tactical-animated-source",
+          paint: {
+            "circle-radius": 8,
+            "circle-color": ["get", "color"],
+            "circle-stroke-width": 3,
+            "circle-stroke-color": "#ffffff",
+            "circle-pitch-alignment": "map"
+          }
+        });
+      }
     };
 
     addTacticalLayers();
@@ -179,24 +200,56 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
     };
     map.current.on('styledata', onStyleData);
 
-    // Animation Loop for Marching Ants effect on lines
+    // Animation Loop for Marching Ants and Moving Points
     let animationId: number;
     let step = 0;
+    let time = 0;
     const dashArraySequence = [
       [0, 4, 3], [0.5, 4, 2.5], [1, 4, 2], [1.5, 4, 1.5], [2, 4, 1], [2.5, 4, 0.5], [3, 4, 0],
       [0, 0, 3, 4], [0, 0.5, 3, 4], [0, 1, 3, 4], [0, 1.5, 3, 4], [0, 2, 3, 4], [0, 2.5, 3, 4], [0, 3, 3, 4]
     ];
     
-    const animateDashArray = () => {
-      if (map.current && map.current.getLayer("tactical-line")) {
+    // Extract LineStrings and their lengths for point animation
+    const lines = tacticalData?.features?.filter((f: any) => f.geometry.type === 'LineString') || [];
+    const lineLengths = lines.map((line: any) => length(line as Feature<LineString>));
+    
+    const animateTactics = () => {
+      if (!map.current) return;
+
+      // 1. Marching Ants
+      if (map.current.getLayer("tactical-line")) {
         const newStep = Math.floor(step / 2) % dashArraySequence.length;
         map.current.setPaintProperty("tactical-line", "line-dasharray", dashArraySequence[newStep]);
         step++;
       }
-      animationId = requestAnimationFrame(animateDashArray);
+      
+      // 2. Moving Points along lines
+      if (lines.length > 0) {
+        time += 0.005; // speed of animation (0 to 1 loop)
+        const pointFeatures: Feature<Point>[] = lines.map((line: any, idx: number) => {
+          const l = lineLengths[idx];
+          // use modulo to loop from 0 to total length
+          const distance = (time % 1) * l; 
+          const p = along(line as Feature<LineString>, distance);
+          p.properties = { ...line.properties };
+          return p as Feature<Point>;
+        });
+        
+        const animSrc = map.current.getSource("tactical-animated-source") as maplibregl.GeoJSONSource;
+        if (animSrc) {
+          animSrc.setData({ type: "FeatureCollection", features: pointFeatures });
+        }
+      } else {
+        const animSrc = map.current.getSource("tactical-animated-source") as maplibregl.GeoJSONSource;
+        if (animSrc) {
+          animSrc.setData({ type: "FeatureCollection", features: [] });
+        }
+      }
+
+      animationId = requestAnimationFrame(animateTactics);
     };
     
-    animateDashArray();
+    animateTactics();
 
     return () => {
       if (animationId) cancelAnimationFrame(animationId);
