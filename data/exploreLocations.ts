@@ -13,12 +13,14 @@ export interface ExploreLocation {
     en: string;
     ar: string;
   };
+  era: "makkiyah" | "madaniyah" | "both";
 }
 
 export const exploreLocations: ExploreLocation[] = [
   {
     id: "makkah",
     coordinates: [39.8261, 21.4225],
+    era: "both",
     name: {
       id: "Makkah Al-Mukarramah",
       en: "Makkah Al-Mukarramah",
@@ -33,6 +35,7 @@ export const exploreLocations: ExploreLocation[] = [
   {
     id: "madinah",
     coordinates: [39.6111, 24.4672],
+    era: "madaniyah",
     name: {
       id: "Madinah (Yatsrib)",
       en: "Madinah (Yathrib)",
@@ -47,6 +50,7 @@ export const exploreLocations: ExploreLocation[] = [
   {
     id: "thaif",
     coordinates: [40.4063, 21.2643],
+    era: "makkiyah",
     name: {
       id: "Thaif",
       en: "Taif",
@@ -61,6 +65,7 @@ export const exploreLocations: ExploreLocation[] = [
   {
     id: "badar",
     coordinates: [38.7844, 23.7344],
+    era: "madaniyah",
     name: {
       id: "Lembah Badar",
       en: "Badr Valley",
@@ -75,6 +80,7 @@ export const exploreLocations: ExploreLocation[] = [
   {
     id: "uhud",
     coordinates: [39.612, 24.502],
+    era: "madaniyah",
     name: {
       id: "Gunung Uhud",
       en: "Mount Uhud",
@@ -89,6 +95,7 @@ export const exploreLocations: ExploreLocation[] = [
   {
     id: "khaibar",
     coordinates: [39.2947, 25.6983],
+    era: "madaniyah",
     name: {
       id: "Benteng Khaibar",
       en: "Fortress of Khaybar",
@@ -103,6 +110,7 @@ export const exploreLocations: ExploreLocation[] = [
   {
     id: "tabuk",
     coordinates: [36.5715, 28.3835],
+    era: "madaniyah",
     name: {
       id: "Tabuk",
       en: "Tabuk",
@@ -115,3 +123,81 @@ export const exploreLocations: ExploreLocation[] = [
     }
   }
 ];
+
+export const exploreTribes = {
+  type: "FeatureCollection",
+  features: [
+    {
+      type: "Feature",
+      properties: { name: "Bani Nadhir", color: "#eab308" }, // yellow
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [[39.60, 24.41], [39.64, 24.41], [39.64, 24.44], [39.60, 24.44], [39.60, 24.41]]
+        ]
+      }
+    },
+    {
+      type: "Feature",
+      properties: { name: "Bani Qainuqa", color: "#ef4444" }, // red
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [[39.60, 24.45], [39.62, 24.45], [39.62, 24.47], [39.60, 24.47], [39.60, 24.45]]
+        ]
+      }
+    },
+    {
+      type: "Feature",
+      properties: { name: "Bani Quraizhah", color: "#3b82f6" }, // blue
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [[39.63, 24.42], [39.68, 24.42], [39.68, 24.46], [39.63, 24.46], [39.63, 24.42]]
+        ]
+      }
+    },
+    {
+      type: "Feature",
+      properties: { name: "Quraisy (Makkah)", color: "#10b981" }, // green
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [[39.50, 21.10], [40.20, 21.10], [40.20, 21.70], [39.50, 21.70], [39.50, 21.10]]
+        ]
+      }
+    }
+  ]
+};
+
+export const exploreRoutes = {
+  hijrah: {
+    type: "Feature",
+    properties: { name: "Rute Hijrah (Jalur Pantai)" },
+    geometry: {
+      type: "LineString",
+      coordinates: [
+        [39.8261, 21.4225], // Makkah
+        [39.8400, 21.3700], // Gua Tsur (approx)
+        [39.2000, 21.5000], // Ke arah pantai barat
+        [38.8000, 22.5000], // Menyusuri pantai
+        [38.5000, 23.5000], // Terus utara
+        [39.0000, 24.0000], // Berbelok ke timur
+        [39.6111, 24.4672]  // Madinah
+      ]
+    }
+  },
+  tabuk: {
+    type: "Feature",
+    properties: { name: "Rute Pasukan Tabuk" },
+    geometry: {
+      type: "LineString",
+      coordinates: [
+        [39.6111, 24.4672], // Madinah
+        [38.5000, 26.0000], // Lembah Al-Qura
+        [37.5000, 27.5000], // Hijr
+        [36.5715, 28.3835]  // Tabuk
+      ]
+    }
+  }
+};

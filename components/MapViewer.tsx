@@ -6,7 +6,7 @@ import { Coordinate } from "@/types/sirah";
 import along from "@turf/along";
 import length from "@turf/length";
 import { FeatureCollection, Feature, Point, LineString } from "geojson";
-import { exploreLocations } from "@/data/exploreLocations";
+import { exploreLocations, exploreTribes, exploreRoutes } from "@/data/exploreLocations";
 
 interface MapViewerProps {
   center: Coordinate;
@@ -15,9 +15,15 @@ interface MapViewerProps {
   bearing?: number;
   tacticalData?: any;
   isExploreMode?: boolean;
+  activeEra?: "all" | "makkiyah" | "madaniyah";
+  showTribes?: boolean;
+  activeRoute?: "none" | "hijrah" | "tabuk";
 }
 
-export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tacticalData, isExploreMode = false }: MapViewerProps) {
+export default function MapViewer({ 
+  center, zoom, pitch = 0, bearing = 0, tacticalData, 
+  isExploreMode = false, activeEra = "all", showTribes = false, activeRoute = "none" 
+}: MapViewerProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -269,102 +275,108 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
     };
   }, [tacticalData, mapLoaded]);
 
-  // Explore Mode Layer
+  // Explore Mode Layer & Filters
   useEffect(() => {
     if (!mapLoaded || !map.current) return;
 
-    const sourceId = "explore-source";
+    // 1. PINS (Era Filter)
+    const pointsSourceId = "explore-source";
+    const filteredLocations = exploreLocations.filter(loc => activeEra === "all" || loc.era === "both" || loc.era === activeEra);
+    const pointFeatures: Feature<Point>[] = filteredLocations.map(loc => ({
+      type: "Feature",
+      properties: { id: loc.id, name: loc.name.id, desc: loc.description.id },
+      geometry: { type: "Point", coordinates: loc.coordinates }
+    }));
 
-    if (!map.current.getSource(sourceId)) {
-      const features: Feature<Point>[] = exploreLocations.map(loc => ({
-        type: "Feature",
-        properties: {
-          id: loc.id,
-          name: loc.name.id,
-          desc: loc.description.id
-        },
-        geometry: {
-          type: "Point",
-          coordinates: loc.coordinates
-        }
-      }));
-
-      map.current.addSource(sourceId, {
-        type: "geojson",
-        data: {
-          type: "FeatureCollection",
-          features
-        }
-      });
+    if (!map.current.getSource(pointsSourceId)) {
+      map.current.addSource(pointsSourceId, { type: "geojson", data: { type: "FeatureCollection", features: pointFeatures } });
+    } else {
+      (map.current.getSource(pointsSourceId) as maplibregl.GeoJSONSource).setData({ type: "FeatureCollection", features: pointFeatures });
     }
 
+    // 2. TRIBES (Polygons)
+    const tribesSourceId = "explore-tribes-source";
+    if (!map.current.getSource(tribesSourceId)) {
+      map.current.addSource(tribesSourceId, { type: "geojson", data: exploreTribes as any });
+    }
+
+    // 3. ROUTES (Lines)
+    const routesSourceId = "explore-routes-source";
+    const activeRouteData = activeRoute !== "none" ? [(exploreRoutes as any)[activeRoute]] : [];
+    if (!map.current.getSource(routesSourceId)) {
+      map.current.addSource(routesSourceId, { type: "geojson", data: { type: "FeatureCollection", features: activeRouteData } });
+    } else {
+      (map.current.getSource(routesSourceId) as maplibregl.GeoJSONSource).setData({ type: "FeatureCollection", features: activeRouteData });
+    }
+
+    // --- TOGGLE LAYERS VISIBILITY ---
     if (isExploreMode) {
+      // Add Points
       if (!map.current.getLayer("explore-points")) {
         map.current.addLayer({
-          id: "explore-points",
-          type: "circle",
-          source: sourceId,
-          paint: {
-            "circle-radius": 8,
-            "circle-color": "#d97706",
-            "circle-stroke-width": 3,
-            "circle-stroke-color": "#ffffff",
-            "circle-pitch-alignment": "map"
-          }
+          id: "explore-points", type: "circle", source: pointsSourceId,
+          paint: { "circle-radius": 8, "circle-color": "#d97706", "circle-stroke-width": 3, "circle-stroke-color": "#ffffff", "circle-pitch-alignment": "map" }
         });
-
         map.current.addLayer({
-          id: "explore-labels",
-          type: "symbol",
-          source: sourceId,
-          layout: {
-            "text-field": ["get", "name"],
-            "text-size": 14,
-            "text-anchor": "top",
-            "text-offset": [0, 1]
-          },
-          paint: {
-            "text-color": "#ffffff",
-            "text-halo-color": "#000000",
-            "text-halo-width": 2
-          }
+          id: "explore-labels", type: "symbol", source: pointsSourceId,
+          layout: { "text-field": ["get", "name"], "text-size": 14, "text-anchor": "top", "text-offset": [0, 1] },
+          paint: { "text-color": "#ffffff", "text-halo-color": "#000000", "text-halo-width": 2 }
         });
 
-        // Add Popup click event
         map.current.on('click', 'explore-points', (e) => {
           if (!e.features || e.features.length === 0) return;
           const feature = e.features[0];
           const coordinates = (feature.geometry as Point).coordinates.slice() as [number, number];
           const { name, desc } = feature.properties as any;
-
           new maplibregl.Popup({ className: 'custom-popup', closeButton: false })
             .setLngLat(coordinates)
-            .setHTML(`
-              <div style="background-color: #1a1a1a; color: #fff; padding: 12px; border-radius: 8px; border: 1px solid #d97706; max-width: 250px;">
-                <h3 style="color: #d97706; font-weight: bold; margin-bottom: 8px; font-size: 16px;">${name}</h3>
-                <p style="font-size: 12px; line-height: 1.5; margin: 0; color: #d1d5db;">${desc}</p>
-              </div>
-            `)
+            .setHTML(`<div style="background-color: #1a1a1a; color: #fff; padding: 12px; border-radius: 8px; border: 1px solid #d97706; max-width: 250px;"><h3 style="color: #d97706; font-weight: bold; margin-bottom: 8px; font-size: 16px;">${name}</h3><p style="font-size: 12px; line-height: 1.5; margin: 0; color: #d1d5db;">${desc}</p></div>`)
             .addTo(map.current!);
         });
+        map.current.on('mouseenter', 'explore-points', () => map.current!.getCanvas().style.cursor = 'pointer');
+        map.current.on('mouseleave', 'explore-points', () => map.current!.getCanvas().style.cursor = '');
+      }
 
-        map.current.on('mouseenter', 'explore-points', () => {
-          map.current!.getCanvas().style.cursor = 'pointer';
+      // Add Tribes Layer
+      if (showTribes && !map.current.getLayer("explore-tribes-fill")) {
+        map.current.addLayer({
+          id: "explore-tribes-fill", type: "fill", source: tribesSourceId,
+          paint: { "fill-color": ["get", "color"], "fill-opacity": 0.3 }
+        }, "explore-points"); // underneath points
+        map.current.addLayer({
+          id: "explore-tribes-line", type: "line", source: tribesSourceId,
+          paint: { "line-color": ["get", "color"], "line-width": 2, "line-opacity": 0.8 }
+        }, "explore-points");
+        map.current.addLayer({
+          id: "explore-tribes-label", type: "symbol", source: tribesSourceId,
+          layout: { "text-field": ["get", "name"], "text-size": 12 },
+          paint: { "text-color": ["get", "color"], "text-halo-color": "#000000", "text-halo-width": 2 }
         });
-        map.current.on('mouseleave', 'explore-points', () => {
-          map.current!.getCanvas().style.cursor = '';
-        });
+      } else if (!showTribes && map.current.getLayer("explore-tribes-fill")) {
+        map.current.removeLayer("explore-tribes-fill");
+        map.current.removeLayer("explore-tribes-line");
+        map.current.removeLayer("explore-tribes-label");
       }
+
+      // Add Routes Layer
+      if (activeRoute !== "none" && !map.current.getLayer("explore-routes-line")) {
+        map.current.addLayer({
+          id: "explore-routes-line", type: "line", source: routesSourceId,
+          layout: { "line-join": "round", "line-cap": "round" },
+          paint: { "line-color": "#34d399", "line-width": 4, "line-dasharray": [2, 2] }
+        }, "explore-points");
+      } else if (activeRoute === "none" && map.current.getLayer("explore-routes-line")) {
+        map.current.removeLayer("explore-routes-line");
+      }
+
     } else {
-      if (map.current.getLayer("explore-points")) {
-        map.current.removeLayer("explore-points");
-      }
-      if (map.current.getLayer("explore-labels")) {
-        map.current.removeLayer("explore-labels");
-      }
+      // Remove all if not in explore mode
+      ["explore-points", "explore-labels", "explore-tribes-fill", "explore-tribes-line", "explore-tribes-label", "explore-routes-line"].forEach(layerId => {
+        if (map.current!.getLayer(layerId)) map.current!.removeLayer(layerId);
+      });
     }
 
-  }, [isExploreMode, mapLoaded]);
+  }, [isExploreMode, activeEra, showTribes, activeRoute, mapLoaded]);
 
   const [isSatellite, setIsSatellite] = useState(false);
   const toggleMapStyle = () => {

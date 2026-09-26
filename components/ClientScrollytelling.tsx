@@ -26,6 +26,9 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
   const [searchQuery, setSearchQuery] = useState("");
   const [readEvents, setReadEvents] = useState<string[]>([]);
   const [isExploreMode, setIsExploreMode] = useState(false);
+  const [activeEra, setActiveEra] = useState<"all" | "makkiyah" | "madaniyah">("all");
+  const [showTribes, setShowTribes] = useState(false);
+  const [activeRoute, setActiveRoute] = useState<"none" | "hijrah" | "tabuk">("none");
 
   React.useEffect(() => {
     const saved = localStorage.getItem('sirah_read_events');
@@ -189,7 +192,60 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
           bearing={mapData.bearing} 
           tacticalData={activeEvent?.tacticalData}
           isExploreMode={isExploreMode}
+          activeEra={activeEra}
+          showTribes={showTribes}
+          activeRoute={activeRoute}
         />
+
+        {/* Explore Mode Control Panel */}
+        {isExploreMode && (
+          <div className="absolute top-20 left-4 z-50 bg-deep-obsidian/90 backdrop-blur-md border border-white/10 rounded-xl p-4 shadow-2xl w-64 animate-fade-in">
+            <h3 className="text-sand-gold font-bold text-sm uppercase tracking-widest mb-4 border-b border-white/10 pb-2">Filter Eksplorasi</h3>
+            
+            {/* Era Filter */}
+            <div className="mb-4">
+              <label className="text-gray-400 text-xs mb-2 block">Periode Sejarah</label>
+              <div className="flex bg-black/40 rounded-lg p-1">
+                {(['all', 'makkiyah', 'madaniyah'] as const).map(era => (
+                  <button
+                    key={era}
+                    onClick={() => setActiveEra(era)}
+                    className={`flex-1 text-[10px] py-1.5 rounded-md capitalize transition-colors ${activeEra === era ? 'bg-sand-gold text-white font-bold' : 'text-gray-400 hover:text-gray-200'}`}
+                  >
+                    {era === 'all' ? 'Semua' : era}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Tribes Toggle */}
+            <div className="mb-4 flex items-center justify-between">
+              <label className="text-gray-400 text-xs cursor-pointer select-none" onClick={() => setShowTribes(!showTribes)}>
+                Wilayah Suku (Geopolitik)
+              </label>
+              <div 
+                className={`w-10 h-5 rounded-full p-1 cursor-pointer transition-colors ${showTribes ? 'bg-sand-gold' : 'bg-black/50'}`}
+                onClick={() => setShowTribes(!showTribes)}
+              >
+                <div className={`w-3 h-3 bg-white rounded-full transition-transform ${showTribes ? 'translate-x-5' : 'translate-x-0'}`} />
+              </div>
+            </div>
+
+            {/* Routes Select */}
+            <div>
+              <label className="text-gray-400 text-xs mb-2 block">Rute Perjalanan Historis</label>
+              <select 
+                value={activeRoute}
+                onChange={(e) => setActiveRoute(e.target.value as any)}
+                className="w-full bg-black/50 border border-white/10 rounded-lg text-xs text-white p-2 outline-none focus:border-sand-gold"
+              >
+                <option value="none">-- Sembunyikan Rute --</option>
+                <option value="hijrah">Rute Hijrah Nabi ﷺ</option>
+                <option value="tabuk">Rute Ekspedisi Tabuk</option>
+              </select>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Mobile Text (Bottom Scroll) / Desktop Text (Left Scroll) */}
