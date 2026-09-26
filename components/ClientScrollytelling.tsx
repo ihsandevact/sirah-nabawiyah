@@ -6,6 +6,7 @@ import { SirahEvent } from "@/types/sirah";
 import NarrativeCard from "./NarrativeCard";
 import LanguageToggle from "./LanguageToggle";
 import DeepDiveModal from "./DeepDiveModal";
+import QuranIndexModal from "./QuranIndexModal";
 import QuizSection from "./QuizSection";
 import { Menu, X, Book, Search, Compass } from "lucide-react";
 
@@ -23,6 +24,7 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
   const [activeEvent, setActiveEvent] = useState<SirahEvent | null>(events.length > 0 ? events[0] : null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [modalEvent, setModalEvent] = useState<SirahEvent | null>(null);
+  const [isQuranModalOpen, setIsQuranModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [readEvents, setReadEvents] = useState<string[]>([]);
   const [isExploreMode, setIsExploreMode] = useState(false);
@@ -158,9 +160,18 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
         {/* Sidebar Footer */}
         <div className="p-4 border-t border-white/10 flex flex-col gap-3">
           <LanguageToggle language={language} onChange={setLanguage} />
-          <a href="/nasab" className="block w-full py-3 rounded-xl bg-sand-gold/20 text-sand-gold hover:bg-sand-gold hover:text-white transition-colors text-sm font-semibold tracking-wide text-center">
-            {isArabic ? "شجرة النسب" : "Pohon Nasab"}
-          </a>
+          
+          <div className="grid grid-cols-2 gap-3">
+            <a href="/nasab" className="block w-full py-3 rounded-xl bg-sand-gold/20 text-sand-gold hover:bg-sand-gold hover:text-white transition-colors text-xs font-semibold tracking-wide text-center">
+              {isArabic ? "شجرة النسب" : "Pohon Nasab"}
+            </a>
+            <button 
+              onClick={() => setIsQuranModalOpen(true)}
+              className="block w-full py-3 rounded-xl bg-emerald-prophetic/20 text-emerald-prophetic hover:bg-emerald-prophetic hover:text-white transition-colors text-xs font-semibold tracking-wide text-center"
+            >
+              {isArabic ? "فهرس القرآن" : "Indeks Qur'an"}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -294,7 +305,11 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
       </div>
 
       {/* Interactive Timeline (Bottom Floating) */}
-      <div className="fixed bottom-6 right-[25vw] translate-x-1/2 z-50 hidden md:flex flex-wrap justify-center items-center gap-1.5 p-3 bg-deep-obsidian/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl max-w-[45vw]">
+      <div className={`fixed z-50 hidden md:flex flex-nowrap justify-center items-center gap-1.5 p-3 bg-deep-obsidian/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transition-all duration-700 ${
+        isExploreMode 
+          ? 'bottom-4 right-4' 
+          : 'bottom-6 right-[25vw] translate-x-1/2'
+      }`}>
         {events.map((event, index) => {
           const isActive = activeEvent?.id === event.id;
           const isPassed = activeEvent ? events.findIndex(e => e.id === activeEvent.id) >= index : false;
@@ -331,6 +346,14 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
         event={modalEvent} 
         language={language} 
         onClose={() => setModalEvent(null)} 
+      />
+
+      {/* Quranic Index Modal Overlay */}
+      <QuranIndexModal 
+        isOpen={isQuranModalOpen} 
+        onClose={() => setIsQuranModalOpen(false)} 
+        events={events} 
+        language={language} 
       />
     </div>
   );

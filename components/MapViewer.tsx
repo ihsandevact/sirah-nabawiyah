@@ -417,7 +417,9 @@ export default function MapViewer({
       {/* Satellite Toggle Button */}
       <button 
         onClick={toggleMapStyle}
-        className="absolute bottom-4 left-4 z-50 p-2 md:p-3 bg-deep-obsidian/80 backdrop-blur-md text-white rounded-xl shadow-lg border border-white/10 hover:bg-sand-gold transition-colors font-bold text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2"
+        className={`absolute z-50 p-2 md:p-3 bg-deep-obsidian/80 backdrop-blur-md text-white rounded-xl shadow-lg border border-white/10 hover:bg-sand-gold transition-colors font-bold text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2 bottom-4 left-4 ${
+          !isExploreMode ? 'md:bottom-auto md:top-6 md:left-6' : ''
+        }`}
       >
         {isSatellite ? "🗺️ Mode Vektor" : "🛰️ Mode Satelit"}
       </button>
