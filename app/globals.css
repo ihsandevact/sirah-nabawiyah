@@ -45,3 +45,14 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-sand-gold);
 }
+
+/* MapLibre Popup Overrides */
+.custom-popup .maplibregl-popup-content {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.custom-popup .maplibregl-popup-tip {
+  border-top-color: #d97706 !important;
+}

@@ -25,6 +25,7 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
   const [modalEvent, setModalEvent] = useState<SirahEvent | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [readEvents, setReadEvents] = useState<string[]>([]);
+  const [isExploreMode, setIsExploreMode] = useState(false);
 
   React.useEffect(() => {
     const saved = localStorage.getItem('sirah_read_events');
@@ -73,10 +74,9 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
       {/* Universal Floating Menu Button */}
       <button 
         onClick={() => setIsSidebarOpen(true)}
-        className="fixed top-4 left-4 z-50 p-3 bg-deep-obsidian/80 backdrop-blur-md rounded-xl border border-white/10 text-white shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-deep-obsidian transition-all group flex items-center gap-3"
+        className="fixed top-4 left-4 z-50 p-3 bg-deep-obsidian/80 backdrop-blur-md rounded-xl border border-white/10 text-white shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-deep-obsidian transition-all group flex items-center justify-center"
       >
         <Menu className="w-6 h-6 group-hover:text-sand-gold transition-colors" />
-        <span className="hidden md:inline font-bold text-sm tracking-wide text-gray-300 group-hover:text-white uppercase">Menu Utama</span>
       </button>
 
       {/* Off-canvas Sidebar Navigation (Overlay) */}
@@ -169,19 +169,31 @@ export default function ClientScrollytelling({ events }: ClientScrollytellingPro
         />
       )}
 
+      {/* Explore Mode Toggle Button */}
+      <button 
+        onClick={() => setIsExploreMode(!isExploreMode)}
+        className="fixed top-4 left-20 z-50 p-3 bg-deep-obsidian/80 backdrop-blur-md rounded-xl border border-white/10 text-white shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-deep-obsidian transition-all group flex items-center gap-3"
+      >
+        <Compass className={`w-6 h-6 transition-colors ${isExploreMode ? 'text-sand-gold animate-pulse' : 'group-hover:text-sand-gold'}`} />
+        <span className="hidden md:inline font-bold text-sm tracking-wide text-gray-300 group-hover:text-white uppercase">
+          {isExploreMode ? (language === "en" ? "Read Story" : "Baca Cerita") : (language === "en" ? "Explore" : "Eksplorasi")}
+        </span>
+      </button>
+
       {/* Mobile Map (Top Fixed) / Desktop Map (Right Sticky) */}
-      <div className="h-[40vh] md:h-screen w-full md:w-[50vw] fixed top-0 md:right-0 z-0 bg-desert-umber">
+      <div className={`fixed top-0 md:right-0 z-0 bg-desert-umber transition-all duration-700 ease-in-out ${isExploreMode ? 'w-full h-screen' : 'h-[40vh] md:h-screen w-full md:w-[50vw]'}`}>
         <MapViewer 
           center={mapData.center} 
           zoom={mapData.zoom} 
           pitch={mapData.pitch} 
           bearing={mapData.bearing} 
           tacticalData={activeEvent?.tacticalData}
+          isExploreMode={isExploreMode}
         />
       </div>
 
       {/* Mobile Text (Bottom Scroll) / Desktop Text (Left Scroll) */}
-      <div className="w-full md:w-[50vw] h-full z-10 mt-[40vh] md:mt-0 md:bg-deep-obsidian/95 backdrop-blur-sm overflow-y-auto overflow-x-hidden scroll-smooth relative pointer-events-auto shadow-2xl">
+      <div className={`h-full z-10 md:bg-deep-obsidian/95 backdrop-blur-sm overflow-y-auto overflow-x-hidden scroll-smooth relative pointer-events-auto shadow-2xl transition-all duration-700 ease-in-out ${isExploreMode ? 'w-0 opacity-0 invisible' : 'w-full md:w-[50vw] mt-[40vh] md:mt-0 opacity-100 visible'}`}>
         
         {/* Header / Intro Spacer */}
         <div className="min-h-screen flex flex-col items-center justify-center p-8 text-center relative border-b border-white/5">

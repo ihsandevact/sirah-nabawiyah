@@ -6,6 +6,7 @@ import { Coordinate } from "@/types/sirah";
 import along from "@turf/along";
 import length from "@turf/length";
 import { FeatureCollection, Feature, Point, LineString } from "geojson";
+import { exploreLocations } from "@/data/exploreLocations";
 
 interface MapViewerProps {
   center: Coordinate;
@@ -13,9 +14,10 @@ interface MapViewerProps {
   pitch?: number;
   bearing?: number;
   tacticalData?: any;
+  isExploreMode?: boolean;
 }
 
-export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tacticalData }: MapViewerProps) {
+export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tacticalData, isExploreMode = false }: MapViewerProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -61,15 +63,25 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
   useEffect(() => {
     if (!mapLoaded || !map.current) return;
 
-    map.current.flyTo({
-      center,
-      zoom,
-      pitch,
-      bearing,
-      essential: true,
-      duration: 2000,
-    });
-  }, [center, zoom, pitch, bearing, mapLoaded]);
+    if (isExploreMode) {
+      map.current.flyTo({
+        center: [39.0, 23.0], // Pusat Semenanjung Arab
+        zoom: 5.5,
+        pitch: 0,
+        bearing: 0,
+        duration: 2500,
+      });
+    } else {
+      map.current.flyTo({
+        center,
+        zoom,
+        pitch,
+        bearing,
+        essential: true,
+        duration: 2000,
+      });
+    }
+  }, [center, zoom, pitch, bearing, mapLoaded, isExploreMode]);
 
   useEffect(() => {
     if (!mapLoaded || !map.current) return;
@@ -257,6 +269,103 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
     };
   }, [tacticalData, mapLoaded]);
 
+  // Explore Mode Layer
+  useEffect(() => {
+    if (!mapLoaded || !map.current) return;
+
+    const sourceId = "explore-source";
+
+    if (!map.current.getSource(sourceId)) {
+      const features: Feature<Point>[] = exploreLocations.map(loc => ({
+        type: "Feature",
+        properties: {
+          id: loc.id,
+          name: loc.name.id,
+          desc: loc.description.id
+        },
+        geometry: {
+          type: "Point",
+          coordinates: loc.coordinates
+        }
+      }));
+
+      map.current.addSource(sourceId, {
+        type: "geojson",
+        data: {
+          type: "FeatureCollection",
+          features
+        }
+      });
+    }
+
+    if (isExploreMode) {
+      if (!map.current.getLayer("explore-points")) {
+        map.current.addLayer({
+          id: "explore-points",
+          type: "circle",
+          source: sourceId,
+          paint: {
+            "circle-radius": 8,
+            "circle-color": "#d97706",
+            "circle-stroke-width": 3,
+            "circle-stroke-color": "#ffffff",
+            "circle-pitch-alignment": "map"
+          }
+        });
+
+        map.current.addLayer({
+          id: "explore-labels",
+          type: "symbol",
+          source: sourceId,
+          layout: {
+            "text-field": ["get", "name"],
+            "text-size": 14,
+            "text-anchor": "top",
+            "text-offset": [0, 1]
+          },
+          paint: {
+            "text-color": "#ffffff",
+            "text-halo-color": "#000000",
+            "text-halo-width": 2
+          }
+        });
+
+        // Add Popup click event
+        map.current.on('click', 'explore-points', (e) => {
+          if (!e.features || e.features.length === 0) return;
+          const feature = e.features[0];
+          const coordinates = (feature.geometry as Point).coordinates.slice() as [number, number];
+          const { name, desc } = feature.properties as any;
+
+          new maplibregl.Popup({ className: 'custom-popup', closeButton: false })
+            .setLngLat(coordinates)
+            .setHTML(`
+              <div style="background-color: #1a1a1a; color: #fff; padding: 12px; border-radius: 8px; border: 1px solid #d97706; max-width: 250px;">
+                <h3 style="color: #d97706; font-weight: bold; margin-bottom: 8px; font-size: 16px;">${name}</h3>
+                <p style="font-size: 12px; line-height: 1.5; margin: 0; color: #d1d5db;">${desc}</p>
+              </div>
+            `)
+            .addTo(map.current!);
+        });
+
+        map.current.on('mouseenter', 'explore-points', () => {
+          map.current!.getCanvas().style.cursor = 'pointer';
+        });
+        map.current.on('mouseleave', 'explore-points', () => {
+          map.current!.getCanvas().style.cursor = '';
+        });
+      }
+    } else {
+      if (map.current.getLayer("explore-points")) {
+        map.current.removeLayer("explore-points");
+      }
+      if (map.current.getLayer("explore-labels")) {
+        map.current.removeLayer("explore-labels");
+      }
+    }
+
+  }, [isExploreMode, mapLoaded]);
+
   const [isSatellite, setIsSatellite] = useState(false);
   const toggleMapStyle = () => {
     if (!map.current) return;
@@ -296,7 +405,7 @@ export default function MapViewer({ center, zoom, pitch = 0, bearing = 0, tactic
       {/* Satellite Toggle Button */}
       <button 
         onClick={toggleMapStyle}
-        className="absolute bottom-4 left-4 md:bottom-auto md:top-6 md:left-6 z-50 p-2 md:p-3 bg-deep-obsidian/80 backdrop-blur-md text-white rounded-xl shadow-lg border border-white/10 hover:bg-sand-gold transition-colors font-bold text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2"
+        className="absolute bottom-4 left-4 z-50 p-2 md:p-3 bg-deep-obsidian/80 backdrop-blur-md text-white rounded-xl shadow-lg border border-white/10 hover:bg-sand-gold transition-colors font-bold text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2"
       >
         {isSatellite ? "🗺️ Mode Vektor" : "🛰️ Mode Satelit"}
       </button>
